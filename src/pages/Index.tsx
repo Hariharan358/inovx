@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import About from "./About";
 import AboutSection from "@/components/AboutSection";
+import EventsSection from "@/components/EventsSection";
+import TeamSection from "@/components/TeamSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -19,6 +22,9 @@ const Index = () => {
         <Hero />
       </motion.div>
       <AboutSection/>
+      <EventsSection/>
+      <TeamSection/>
+      <ContactSection/>
       <Footer/>
       
     </div>
