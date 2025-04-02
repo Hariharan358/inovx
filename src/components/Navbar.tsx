@@ -2,12 +2,18 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const isActive = (path: string) => {
+    return location.pathname === path ? "text-club-purple" : "text-gray-900 hover:text-club-purple";
   };
 
   return (
@@ -16,32 +22,32 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo and site name */}
           <div className="flex items-center">
-            <a href="#" className="flex-shrink-0 flex items-center">
+            <Link to="/" className="flex-shrink-0 flex items-center">
               <div className="bg-gradient-to-r from-club-purple to-club-teal w-8 h-8 rounded-md flex items-center justify-center text-white font-bold mr-2">
                 N
               </div>
               <span className="text-xl font-bold text-gray-900">Nexus</span>
-            </a>
+            </Link>
           </div>
           
           {/* Desktop navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a href="#home" className="text-gray-900 hover:text-club-purple px-3 py-2 rounded-md text-sm font-medium">
+              <Link to="/" className={`${isActive('/')} px-3 py-2 rounded-md text-sm font-medium`}>
                 Home
-              </a>
-              <a href="#about" className="text-gray-900 hover:text-club-purple px-3 py-2 rounded-md text-sm font-medium">
+              </Link>
+              <Link to="/about" className={`${isActive('/about')} px-3 py-2 rounded-md text-sm font-medium`}>
                 About
-              </a>
-              <a href="#events" className="text-gray-900 hover:text-club-purple px-3 py-2 rounded-md text-sm font-medium">
+              </Link>
+              <Link to="/events" className={`${isActive('/events')} px-3 py-2 rounded-md text-sm font-medium`}>
                 Events
-              </a>
-              <a href="#team" className="text-gray-900 hover:text-club-purple px-3 py-2 rounded-md text-sm font-medium">
+              </Link>
+              <Link to="/team" className={`${isActive('/team')} px-3 py-2 rounded-md text-sm font-medium`}>
                 Team
-              </a>
-              <a href="#contact" className="text-gray-900 hover:text-club-purple px-3 py-2 rounded-md text-sm font-medium">
+              </Link>
+              <Link to="/contact" className={`${isActive('/contact')} px-3 py-2 rounded-md text-sm font-medium`}>
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
           
@@ -69,21 +75,21 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#home" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+            <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
               Home
-            </a>
-            <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+            </Link>
+            <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
               About
-            </a>
-            <a href="#events" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+            </Link>
+            <Link to="/events" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
               Events
-            </a>
-            <a href="#team" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+            </Link>
+            <Link to="/team" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
               Team
-            </a>
-            <a href="#contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
+            </Link>
+            <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">
               Contact
-            </a>
+            </Link>
             <div className="pt-2">
               <Button className="w-full bg-club-purple hover:bg-club-purple/90">
                 Join Nexus

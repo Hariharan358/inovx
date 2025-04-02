@@ -2,21 +2,20 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import AboutSection from "@/components/AboutSection";
-import EventsSection from "@/components/EventsSection";
-import TeamSection from "@/components/TeamSection";
-import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <Hero />
-      <AboutSection />
-      <EventsSection />
-      <TeamSection />
-      <ContactSection />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Hero />
+      </motion.div>
       <Footer />
     </div>
   );
