@@ -85,42 +85,11 @@ const Hero = () => {
             <div className="hidden lg:flex items-center justify-center">
               <div className="relative">
                 {/* Code block design */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.7, delay: 0.5 }}
-                  className="absolute -top-6 -left-6 bg-club-purple/20 backdrop-blur-lg p-6 rounded-lg border border-white/10 shadow-xl"
-                >
-                  <Code className="h-6 w-6 text-club-purple mb-1" />
-                  <h3 className="text-lg font-semibold mb-1">Coding</h3>
-                  <p className="text-sm text-gray-300">Build your technical skills</p>
-                </motion.div>
-
-                {/* Business block design */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.7, delay: 0.8 }}
-                  className="absolute -bottom-6 -left-2 bg-club-teal/20 backdrop-blur-lg p-6 rounded-lg border border-white/10 shadow-xl"
-                >
-                  <Briefcase className="h-6 w-6 text-club-teal mb-1" />
-                  <h3 className="text-lg font-semibold mb-1">Business</h3>
-                  <p className="text-sm text-gray-300">Develop entrepreneurial skills</p>
-                </motion.div>
+              
+                 
 
                 {/* Community block design */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 1.1 }}
-                  className="bg-white/10 backdrop-blur-lg p-8 rounded-lg border border-white/20 shadow-xl"
-                >
-                  <Users className="h-8 w-8 text-white mb-2" />
-                  <h3 className="text-xl font-bold mb-2">Community</h3>
-                  <p className="text-gray-200">
-                    Connect with like-minded innovators and build meaningful networks.
-                  </p>
-                </motion.div>
+               
               </div>
             </div>
           </div>

@@ -23,8 +23,8 @@ const Index = () => {
       </motion.div>
       <AboutSection/>
       <EventsSection/>
-      <TeamSection/>
-      <ContactSection/>
+      
+      
       <Footer/>
       
     </div>

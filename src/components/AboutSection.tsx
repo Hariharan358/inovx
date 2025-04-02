@@ -1,125 +1,253 @@
 import React, { useState, useEffect } from "react";
-import { Code, ChartBar, Briefcase, Users, Sun, Moon } from "lucide-react";
-import ScrollFloat from '../blocks/TextAnimations/ScrollFloat/ScrollFloat';
+import { Code, ChartBar, Briefcase, Users } from "lucide-react";
+import ScrollFloat from "../blocks/TextAnimations/ScrollFloat/ScrollFloat";
+import { motion } from "framer-motion";
 
-const AboutSection = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+const AboutSection: React.FC = () => {
+  const [theme, setTheme] = useState<string>("light");
+
+  // Set theme from localStorage if available
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
-
   const features = [
     {
       icon: <Code className="h-6 w-6 text-club-purple" />,
       title: "Technical Development",
-      description: "Hands-on workshops, coding bootcamps, and hackathons to build your technical skills in various programming languages and frameworks."
+      description:
+        "Hands-on workshops, coding bootcamps, and hackathons to build your technical skills in various programming languages and frameworks.",
     },
     {
       icon: <Briefcase className="h-6 w-6 text-club-purple" />,
       title: "Business Skills",
-      description: "Learn about entrepreneurship, marketing, finance, and business strategy through workshops, case studies, and real-world projects."
+      description:
+        "Learn about entrepreneurship, marketing, finance, and business strategy through workshops, case studies, and real-world projects.",
     },
     {
       icon: <ChartBar className="h-6 w-6 text-club-purple" />,
       title: "Startup Incubation",
-      description: "Get mentorship, resources, and funding opportunities to turn your innovative ideas into successful startups with real-world impact."
+      description:
+        "Get mentorship, resources, and funding opportunities to turn your innovative ideas into successful startups with real-world impact.",
     },
     {
       icon: <Users className="h-6 w-6 text-club-purple" />,
       title: "Networking",
-      description: "Connect with industry professionals, alumni entrepreneurs, and like-minded peers to build your professional network."
+      description:
+        "Connect with industry professionals, alumni entrepreneurs, and like-minded peers to build your professional network.",
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header & Theme Toggle */}
-        <div className="flex justify-between items-center mb-16">
-          <ScrollFloat
-            animationDuration={1}
-            ease='back.inOut(2)'
-            scrollStart='center bottom+=50%'
-            scrollEnd='bottom bottom-=40%'
-            stagger={0.03}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white font-poppins">
-              About Inovx
-            </h2>
-          </ScrollFloat>
-          
-          {/* Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors"
-            aria-label="Toggle Theme"
-          >
-            {theme === "light" ? <Moon className="text-gray-900" /> : <Sun className="text-yellow-400" />}
-          </button>
-        </div>
-
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-center">
-          We are a student-led departmental club bridging the gap between technical skills and business acumen, preparing the next generation of tech entrepreneurs.
-        </p>
-
-        {/* Mission & Vision */}
-        <div className="grid md:grid-cols-2 gap-8 mt-10">
-          <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-sm">
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Our Mission</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              To foster innovation and entrepreneurship by providing students with the technical skills, business knowledge, and networking opportunities needed to succeed in today's competitive tech industry.
-            </p>
-            <div className="code-block bg-blue-900 text-white p-6 rounded-lg font-mono text-sm overflow-auto">
-              <pre>
-                <code>
-                  <span className="code-keyword">function</span> <span className="code-line">createInnovation</span>() {'{'}
-                  <br />
-                  &nbsp;&nbsp;<span className="code-keyword">const</span> <span className="code-line">skills</span> = ["coding", "business", "leadership"];
-                  <br />
-                  &nbsp;&nbsp;<span className="code-keyword">const</span> <span className="code-line">community</span> = buildCommunity(students, industry);
-                  <br />
-                  &nbsp;&nbsp;<span className="code-keyword">return</span> skills.map(<span className="code-line">skill</span> =&gt; {'{'} 
-                  <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="code-keyword">return</span> community.innovate(skill);
-                  <br />
-                  &nbsp;&nbsp;{'}'});
-                  <br />
-                  {'}'}
-                </code>
-              </pre>
-            </div>
+    <>
+      <section id="about" className="py-16 px-4 bg-white dark:bg-black transition-colors">
+        <div className="max-w-7xl mx-auto">
+          {/* Centering ScrollFloat */}
+          <div className="relative flex items-center justify-center mb-10 text-center">
+            <ScrollFloat
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+            >
+              "We Hatch Better Ideas"
+            </ScrollFloat>
           </div>
 
-          <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg shadow-sm">
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Our Vision</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              To become the premier platform for nurturing technical and entrepreneurial talent, empowering students to create innovative solutions.
-            </p>
-          </div>
-        </div>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-center px-4">
+            We are a student-led departmental club bridging the gap between technical skills and business acumen, preparing the next generation of tech entrepreneurs.
+          </p>
 
-        {/* Features Section */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
-              <div className="h-12 w-12 rounded-lg bg-club-purple/10 flex items-center justify-center mb-4">
-                {feature.icon}
+          {/* Mission & Vision */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+            <div className="card bg-gray-100 dark:bg-black p-6 md:p-8 rounded-lg shadow-sm border border-black dark:border-gray-700">
+              <h3 className="card__title text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                Our Mission
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
+                To foster innovation and entrepreneurship by providing students with the technical skills, business knowledge, and networking opportunities needed to succeed in today's competitive tech industry.
+              </p>
+              <div className="code-block bg-black text-black p-4 md:p-6 rounded-lg font-mono text-xs md:text-sm overflow-auto">
+                <pre>
+                  <code>
+                    function createInnovation() {"{"}
+                    <br />
+                    &nbsp;&nbsp;const skills = ["coding", "business", "leadership"];
+                    <br />
+                    &nbsp;&nbsp;const community = buildCommunity(students, industry);
+                    <br />
+                    &nbsp;&nbsp;return skills.map(skill => {"{"}
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;return community.innovate(skill);
+                    <br />
+                    &nbsp;&nbsp;{"}"}; 
+                    <br />
+                    {"}"}
+                  </code>
+                </pre>
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{feature.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
             </div>
-          ))}
-        </div>
 
-      </div>
-    </section>
+            <div className="card bg-gray-100 dark:bg-black p-6 md:p-8 rounded-lg shadow-sm border border-black dark:border-gray-700">
+              <h3 className="card__title text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                Our Vision
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                To become the premier platform for nurturing technical and entrepreneurial talent, empowering students to create innovative solutions.
+              </p>
+              <p className="mt-8 font-poppins">
+              "To empower the next generation of tech entrepreneurs by fostering a dynamic ecosystem that blends technical expertise, business strategy, and innovation. Our goal is to provide students with the tools, mentorship, and networks to transform creative ideas into impactful solutions that shape the future of technology and business"
+              </p>
+            </div>
+          </div>
+
+          {/* Features Section with animation */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: index * 0.2, // Stagger the animations
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 25,
+                }}
+                className="card bg-gray-100 dark:bg-black p-6 rounded-lg shadow-sm border border-gray-300 dark:border-white text-center"
+              >
+                <div className="h-12 w-12 mx-auto rounded-lg bg-club-purple/10 flex items-center justify-center mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="card__title text-lg md:text-xl font-bold mb-2 text-gray-900 dark:text-white">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <style jsx>{`
+        /* Card Styles */
+        .card {
+          width: 100%; /* Increase the width */
+          padding: 20px;
+          background: #fff;
+          border: 6px solid #000;
+          box-shadow: 12px 12px 0 #000;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+          transform: translate(-5px, -5px);
+          box-shadow: 17px 17px 0 #000;
+        }
+
+        .card__title {
+          font-size: 32px;
+          font-weight: 900;
+    
+          text-transform: uppercase;
+          margin-bottom: 15px;
+          display: block;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .card__title::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 90%;
+          height: 3px;
+         
+        }
+
+        .card:hover .card__title::after {
+          transform: translateX(0);
+        }
+
+        .card__content {
+          font-size: 16px;
+          line-height: 1.4;
+          color: #000;
+          margin-bottom: 20px;
+        }
+
+        .card__form {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .card__form input {
+          padding: 10px;
+          border: 3px solid #000;
+          font-size: 16px;
+          font-family: inherit;
+          transition: transform 0.3s;
+          width: calc(100% - 26px); /* Adjust for padding and border */
+        }
+
+        .card__form input:focus {
+          outline: none;
+          transform: scale(1.05);
+          background-color: #000;
+          color: #ffffff;
+        }
+
+        .card__button {
+          border: 3px solid #000;
+          background: #000;
+          color: #fff;
+          padding: 10px;
+          font-size: 18px;
+          left: 20%;
+          font-weight: bold;
+          text-transform: uppercase;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s;
+          width: 50%;
+          height: 100%;
+        }
+
+        .card__button::before {
+          content: "Sure?";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 105%;
+          background-color: #5ad641;
+          color: #000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: translateY(100%);
+          transition: transform 0.3s;
+        }
+
+        .card__button:hover::before {
+          transform: translateY(0);
+        }
+
+        .card__button:active {
+          transform: scale(0.95);
+        }
+      `}</style>
+    </>
   );
 };
 
