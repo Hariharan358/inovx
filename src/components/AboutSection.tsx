@@ -78,21 +78,22 @@ const AboutSection: React.FC = () => {
               </p>
               <div className="code-block bg-black text-black p-4 md:p-6 rounded-lg font-mono text-xs md:text-sm overflow-auto">
                 <pre>
-                  <code>
-                    function createInnovation() {"{"}
-                    <br />
-                    &nbsp;&nbsp;const skills = ["coding", "business", "leadership"];
-                    <br />
-                    &nbsp;&nbsp;const community = buildCommunity(students, industry);
-                    <br />
-                    &nbsp;&nbsp;return skills.map(skill => {"{"}
-                    <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;return community.innovate(skill);
-                    <br />
-                    &nbsp;&nbsp;{"}"}; 
-                    <br />
-                    {"}"}
-                  </code>
+                <code>
+  function createInnovation() &#123;
+  <br />
+  &nbsp;&nbsp;const skills = ["coding", "business", "leadership"];
+  <br />
+  &nbsp;&nbsp;const community = buildCommunity(students, industry);
+  <br />
+  &nbsp;&nbsp;return skills.map(skill = &#123;
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;return community.innovate(skill);
+  <br />
+  &nbsp;&nbsp;&#125;);
+  <br />
+  &#125;
+</code>
+
                 </pre>
               </div>
             </div>
