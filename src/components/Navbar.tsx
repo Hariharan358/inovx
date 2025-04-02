@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link to="/" className={`${isActive("/")} px-3 py-1 rounded-full text-sm font-medium transition`}>Home</Link>
         <Link to="/about" className={`${isActive("/about")} px-3 py-1 rounded-full text-sm font-medium transition`}>About</Link>
         <Link to="/events" className={`${isActive("/events")} px-3 py-1 rounded-full text-sm font-medium transition`}>Events</Link>
-        
+        <Link to="#" className={`${isActive("/team")} px-3 py-1 rounded-full text-sm font-medium transition`}>Team</Link>
        
       </div>
 
@@ -60,7 +60,6 @@ const Navbar = () => {
             <Link to="/" className="block px-4 py-2 rounded-lg text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</Link>
             <Link to="/about" className="block px-4 py-2 rounded-lg text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</Link>
             <Link to="/events" className="block px-4 py-2 rounded-lg text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Events</Link>
-
           </div>
         </div>
       )}
