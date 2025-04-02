@@ -1,7 +1,6 @@
 
 import React from "react";
 import Navbar from "@/components/Navbar";
-import TeamSection from "@/components/TeamSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
@@ -14,7 +13,6 @@ const Team = () => {
       className="min-h-screen bg-white"
     >
       <Navbar />
-      <TeamSection />
       <Footer />
     </motion.div>
   );
