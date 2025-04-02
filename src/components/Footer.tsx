@@ -19,7 +19,7 @@ const Footer = () => {
               <div className="bg-gradient-to-r from-club-purple to-club-teal w-8 h-8 rounded-md flex items-center justify-center text-white font-bold mr-2">
                 N
               </div>
-              <span className="text-xl font-bold">Nexus</span>
+              <span className="text-xl font-bold">Inovx</span>
             </div>
             <p className="text-gray-300 mb-6">
               Bridging the gap between technology and business to foster innovation and entrepreneurship.
@@ -97,7 +97,7 @@ const Footer = () => {
         
         <div className="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 text-sm">
-            © {new Date().getFullYear()} Nexus Club. All rights reserved.
+             {new Date().getFullYear()} 
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-white">

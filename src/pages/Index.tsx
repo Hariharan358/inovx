@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import About from "./About";
+import AboutSection from "@/components/AboutSection";
 
 const Index = () => {
   return (
@@ -16,7 +18,9 @@ const Index = () => {
       >
         <Hero />
       </motion.div>
-      <Footer />
+      <AboutSection/>
+      <Footer/>
+      
     </div>
   );
 };

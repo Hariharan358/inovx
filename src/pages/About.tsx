@@ -13,7 +13,7 @@ const About = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-white"
     >
-      <Navbar />
+        <Navbar/>
       <AboutSection />
       <Footer />
     </motion.div>

@@ -121,6 +121,9 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				mono: ['Fira Code', 'monospace'],
+				bebas: ['Bebas Neue', 'cursive'],
+				montserrat: ['Montserrat', 'sans-serif'],
+
 			}
 		}
 	},
