@@ -23,10 +23,8 @@ const Index = () => {
       </motion.div>
       <AboutSection/>
       <EventsSection/>
-      
-      
       <Footer/>
-      
+
     </div>
   );
 };

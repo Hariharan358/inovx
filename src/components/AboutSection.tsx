@@ -137,7 +137,7 @@ const AboutSection: React.FC = () => {
         </div>
       </section>
 
-      <style jsx>{`
+      <style >{`
         /* Card Styles */
         .card {
           width: 100%; /* Increase the width */
