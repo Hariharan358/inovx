@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link to="/" className={`${isActive("/")} px-3 py-1 rounded-full text-sm font-medium transition`}>Home</Link>
         <Link to="/about" className={`${isActive("/about")} px-3 py-1 rounded-full text-sm font-medium transition`}>About</Link>
         <Link to="/events" className={`${isActive("/events")} px-3 py-1 rounded-full text-sm font-medium transition`}>Events</Link>
-        <Link to="#" className={`${isActive("/team")} px-3 py-1 rounded-full text-sm font-medium transition`}>Team</Link>
+
        
       </div>
 
