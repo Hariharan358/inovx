@@ -56,16 +56,8 @@ const Footer = () => {
                   Events
                 </a>
               </li>
-              <li>
-                <a href="#team" className="text-black hover:text-white transition-colors dark:text-white">
-                  Team
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-black hover:text-white transition-colors dark:text-white">
-                  Contact
-                </a>
-              </li>
+              
+              
             </ul>
           </div>
 
