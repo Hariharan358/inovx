@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50  shadow-lg rounded-full px-6 py-2 flex items-center justify-between w-[90%] max-w-3xl backdrop-blur-md border border-gray-300 dark:border-gray-700 ${theme === "dark" ? "bg-black" : "bg-gray-200"}`}>
       {/* Logo */}
       <Link to="/" className="flex-shrink-0">
-        <img src={InovxLogo} alt="INOVX" className="h-10 w-18 " />
+        <img src={InovxLogo} alt="INOVX" className="h-10 w-10 rounded-full object-cover" />
       </Link>
       
       {/* Desktop navigation */}
@@ -39,7 +39,8 @@ const Navbar = () => {
         <Link to="/" className={`${isActive("/")} px-3 py-1 rounded-full text-sm font-medium transition`}>Home</Link>
         <Link to="/about" className={`${isActive("/about")} px-3 py-1 rounded-full text-sm font-medium transition`}>About</Link>
         <Link to="/events" className={`${isActive("/events")} px-3 py-1 rounded-full text-sm font-medium transition`}>Events</Link>
-       
+        <Link to="/members" className={`${isActive("/members")} px-3 py-1 rounded-full text-sm font-medium transition`}>Members</Link>
+        <Link to="/contact" className={`${isActive("/contact")} px-3 py-1 rounded-full text-sm font-medium transition`}>Contact</Link>
       </div>
 
       {/* Theme toggle button */}
@@ -59,6 +60,8 @@ const Navbar = () => {
             <Link to="/" className="block px-4 py-2 rounded-lg text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Home</Link>
             <Link to="/about" className="block px-4 py-2 rounded-lg text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">About</Link>
             <Link to="/events" className="block px-4 py-2 rounded-lg text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Events</Link>
+            <Link to="/members" className="block px-4 py-2 rounded-lg text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Members</Link>
+            <Link to="/contact" className="block px-4 py-2 rounded-lg text-gray-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</Link>
           </div>
         </div>
       )}

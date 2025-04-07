@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight, Code, Users, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const containerVariants = {
@@ -72,12 +73,16 @@ const Hero = () => {
                 building the next generation of tech startups.
               </motion.p>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-club-purple hover:bg-club-purple/90">
-                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="bg-club-blue hover:bg-club-purple/90">
-                  Learn More
-                </Button>
+                <Link to="/contact">
+                  <Button size="lg" className="bg-club-purple hover:bg-club-purple/90">
+                    Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/members">
+                  <Button size="lg" variant="outline" className="bg-club-blue hover:bg-club-purple/90">
+                    Learn More
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
 
