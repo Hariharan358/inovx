@@ -4,6 +4,7 @@ import { ArrowRight, Volume2, VolumeX } from "lucide-react";
 import { Calendar, Sun, Moon } from "lucide-react";
 
 import ScrollVelocity from '../blocks/TextAnimations/ScrollVelocity/ScrollVelocity';
+import InovxLogo from "../img/logo.png";
  // Add Volume2 and VolumeX icons
 
 const EventsSection = () => {
