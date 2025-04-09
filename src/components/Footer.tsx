@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
-import logo from '../img/logo.png';
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -42,7 +41,7 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
               className="flex items-center space-x-2"
             >
-              <img src={logo} alt="InovX Logo" className="h-10 w-10 rounded-full object-cover" />
+              <img src="/slider/logo.jpg" alt="InovX Logo" className="h-10 w-10 rounded-full object-cover" />
               <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
                 InovX
               </span>

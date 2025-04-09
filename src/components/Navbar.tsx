@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import InovxLogo from "../img/logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,8 +29,11 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50  shadow-lg rounded-full px-6 py-2 flex items-center justify-between w-[90%] max-w-3xl backdrop-blur-md border border-gray-300 dark:border-gray-700 ${theme === "dark" ? "bg-black" : "bg-gray-200"}`}>
       {/* Logo */}
-      <Link to="/" className="flex-shrink-0">
-        <img src={InovxLogo} alt="INOVX" className="h-10 w-10 rounded-full object-cover" />
+      <Link to="/" className="flex items-center space-x-2">
+        <img src="/slider/logo.jpg" alt="InovX Logo" className="h-10 w-10 rounded-full object-cover" />
+        <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+          InovX
+        </span>
       </Link>
       
       {/* Desktop navigation */}
