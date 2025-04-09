@@ -57,7 +57,7 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
     <div 
       className="relative w-full max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto overflow-hidden rounded-2xl" 
       style={{ 
-        aspectRatio: isLargeScreen ? '5184/2000' : '5184/3456'
+        aspectRatio: isLargeScreen ? '5184/3200' : '5184/3456'
       }}
     >
       <div

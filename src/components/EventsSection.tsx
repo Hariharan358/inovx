@@ -89,6 +89,7 @@ const EventsSection = () => {
             <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
             Innovation is not just about ideas; it's about turning those ideas into reality, and that's exactly what InovX stands for. This club will be a hub where creativity meets technology, where students collaborate, experiment, and push boundaries. Whether it's through workshops, projects, or discussions, InovX will provide a platform to explore, learn, and grow together.
             </p>
+            <p className="text-l text-gray-600 dark:text-gray-300 mb-4"><b>Editor : Barath S</b></p>
           </div>
         </div>
 

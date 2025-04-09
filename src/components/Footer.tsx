@@ -111,7 +111,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Contact Us</h3>
             <div className="flex space-x-4">
               {[
-                { name: 'Instagram', icon: 'instagram', url: '#' },
+                { name: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/inovxrec/' },
                 { name: 'GitHub', icon: 'github', url: '#' },
                 { name: 'LinkedIn', icon: 'linkedin', url: '#' }
               ].map((social) => (
