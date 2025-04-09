@@ -1,5 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import gova from './Members/GOVA.jpg';
+import rakesh from './Members/rakesh.jpg';
+import hari from './Members/hari.jpg';
+import santhosh from './Members/santhosh.jpg';
 
 interface Developer {
   name: string;
@@ -9,28 +13,29 @@ interface Developer {
 
 const developers: Developer[] = [
   {
+    name: "Hariharan K",
+    linkedinUrl: "https://www.linkedin.com/in/hariharan-kannan-9a160b2a2/",
+    imageUrl: hari
+    },
+  {
     name: "Govarthan V",
     linkedinUrl: "https://www.linkedin.com/in/govarthan-v",
-    imageUrl: "https://media.licdn.com/dms/image/D5603AQFQxQxQxQxQxQ/profile-displayphoto-shrink_200_200/0/1234567890?e=1715212800&v=beta&t=abcdefghijklmnopqrstuvwxyz"
+    imageUrl: gova
+  },
+    
+  {
+    name: "Santhosh",
+    linkedinUrl: "https://www.linkedin.com/in/santhosh-srinivasan",
+    imageUrl: santhosh
   },
   {
-    name: "Jane Smith",
-    linkedinUrl: "https://www.linkedin.com/in/janesmith",
-    imageUrl: "https://media.licdn.com/dms/image/D5603AQFQxQxQxQxQxQ/profile-displayphoto-shrink_200_200/0/1234567890?e=1715212800&v=beta&t=abcdefghijklmnopqrstuvwxyz"
-  },
+    name: "Rakesh R",
+    linkedinUrl: "https://www.linkedin.com/in/rakesh-r-91a324274",
+    imageUrl: rakesh
+   },
   {
-    name: "Alex Johnson",
-    linkedinUrl: "https://www.linkedin.com/in/alexjohnson",
-    imageUrl: "https://media.licdn.com/dms/image/D5603AQFQxQxQxQxQxQ/profile-displayphoto-shrink_200_200/0/1234567890?e=1715212800&v=beta&t=abcdefghijklmnopqrstuvwxyz"
-  },
-  {
-    name: "Sarah Williams",
+    name: "Thejas",
     linkedinUrl: "https://www.linkedin.com/in/sarahwilliams",
-    imageUrl: "https://media.licdn.com/dms/image/D5603AQFQxQxQxQxQxQ/profile-displayphoto-shrink_200_200/0/1234567890?e=1715212800&v=beta&t=abcdefghijklmnopqrstuvwxyz"
-  },
-  {
-    name: "Michael Brown",
-    linkedinUrl: "https://www.linkedin.com/in/michaelbrown",
     imageUrl: "https://media.licdn.com/dms/image/D5603AQFQxQxQxQxQxQ/profile-displayphoto-shrink_200_200/0/1234567890?e=1715212800&v=beta&t=abcdefghijklmnopqrstuvwxyz"
   }
 ];
@@ -61,8 +66,10 @@ const DevelopersCredit = () => {
     },
     hover: {
       scale: 1.05,
+      y: -5,
       transition: {
-        duration: 0.2
+        duration: 0.3,
+        ease: "easeOut"
       }
     }
   };
@@ -76,7 +83,7 @@ const DevelopersCredit = () => {
     >
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
+          className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -95,15 +102,15 @@ const DevelopersCredit = () => {
               key={index}
               variants={cardVariants}
               whileHover="hover"
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
             >
-              <div className="p-6 flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full overflow-hidden mb-4 flex items-center justify-center">
+              <div className="p-6 flex flex-col items-center relative">
+                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 flex items-center justify-center ring-4 ring-blue-500/20 dark:ring-blue-400/20 group-hover:ring-blue-500/40 dark:group-hover:ring-blue-400/40 transition-all duration-300">
                   {developer.imageUrl ? (
                     <img 
                       src={developer.imageUrl} 
                       alt={developer.name} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                       onError={(e) => {
                         // Fallback to first letter if image fails to load
                         const target = e.target as HTMLImageElement;
@@ -125,14 +132,14 @@ const DevelopersCredit = () => {
                     </div>
                   )}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white">
+                <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                   {developer.name}
                 </h3>
                 <motion.a 
                   href={developer.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2"
+                  className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-full hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
