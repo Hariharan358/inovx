@@ -62,12 +62,12 @@ const EventsSection = () => {
             </p>
           </div>
           <div className="mt-6 md:mt-0">
-            <Button 
+            <a href="https://www.youtube.com/watch?v=70siooA00MY"><Button 
               variant="outline" 
               className="flex items-center gap-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
             >
-              Watch More <ArrowRight className="h-4 w-4" />
-            </Button>
+              Watch Event Video <ArrowRight className="h-4 w-4" />
+            </Button></a>
           </div>
         </div>
 

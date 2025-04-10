@@ -4,6 +4,7 @@ import gova from './Members/GOVA.jpg';
 import rakesh from './Members/rakesh.jpg';
 import hari from './Members/hari.jpg';
 import santhosh from './Members/santhosh.jpg';
+import thejas from './Members/thejas.jpg';
 
 interface Developer {
   name: string;
@@ -35,8 +36,8 @@ const developers: Developer[] = [
    },
   {
     name: "Thejas",
-    linkedinUrl: "https://www.linkedin.com/in/sarahwilliams",
-    imageUrl: "https://media.licdn.com/dms/image/D5603AQFQxQxQxQxQxQ/profile-displayphoto-shrink_200_200/0/1234567890?e=1715212800&v=beta&t=abcdefghijklmnopqrstuvwxyz"
+    linkedinUrl: "https://www.linkedin.com/in/thejas-r-6a0543295",
+    imageUrl: thejas
   }
 ];
 
