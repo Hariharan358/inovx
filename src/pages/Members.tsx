@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 
 const membersData = [
   {
-    name: "Barath S",
+    name: "Vignesh",
     role: "President",
     image: "https://randomuser.me/api/portraits/men/1.jpg",
     email: "barath@inovx.com",

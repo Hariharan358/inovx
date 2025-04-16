@@ -42,9 +42,13 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
               className="flex items-center space-x-2"
             >
-              <img src="/favicon.jpg" alt="InovX Logo" className="h-10 w-10 rounded-full object-cover" />
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-                InovX
+              <img
+                src="/logo.png"
+                alt="Inovx Logo"
+                className="h-8 w-auto"
+              />
+              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                Inovx
               </span>
             </motion.div>
             <p className="text-gray-600 dark:text-gray-300">
