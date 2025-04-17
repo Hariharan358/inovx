@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
-import { FaDiscord,FaInstagram } from 'react-icons/fa';
+import { FaDiscord, FaInstagram } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -30,6 +32,10 @@ const Footer = () => {
     };
   }, []);
 
+  const handleLogoError = () => {
+    setLogoError(true);
+  };
+
   return (
     <footer className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <div className="container mx-auto px-4 py-12">
@@ -42,13 +48,20 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
               className="flex items-center space-x-2"
             >
-              <img
-                src="/logo.png"
-                alt="Inovx Logo"
-                className="h-8 w-auto"
-              />
-              <span className="text-xl font-bold text-gray-900 dark:text-white">
-                Inovx
+              {!logoError ? (
+                <img
+                  src="/logo.png"
+                  alt="Inovx Logo"
+                  className="h-10 w-10 rounded-full object-cover"
+                  onError={handleLogoError}
+                />
+              ) : (
+                <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 flex items-center justify-center text-white">
+                  <span className="text-lg font-bold">I</span>
+                </div>
+              )}
+              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+                InovX
               </span>
             </motion.div>
             <p className="text-gray-600 dark:text-gray-300">
@@ -64,18 +77,24 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Services', 'Contact'].map((item) => (
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About', path: '/about' },
+                { name: 'Projects', path: '/projects' },
+                { name: 'Members', path: '/members' },
+                { name: 'Contact', path: '/contact' }
+              ].map((item) => (
                 <motion.li 
-                  key={item}
+                  key={item.name}
                   whileHover={{ x: 5 }}
                   className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                 >
-                  <a href={`#${item.toLowerCase()}`} className="flex items-center gap-2">
+                  <Link to={item.path} className="flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                    {item}
-                  </a>
+                    {item.name}
+                  </Link>
                 </motion.li>
               ))}
             </ul>
@@ -87,7 +106,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Connect With Us</h3>
             <div className="flex space-x-4">
               {[
                 { name: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/inovxrec/' },

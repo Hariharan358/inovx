@@ -22,7 +22,7 @@ const Projects = () => {
         "Energy-efficient design with solar power option"
       ],
       technologies: ["ESP8266", "DHT11", "Soil Moisture Sensor", "ThingSpeak", "IoT", "Arduino", "C++"],
-      githubLink: "https://github.com/Govarthan30/Smart-Irrigation-and-Crop-Health-Monitoring-System",
+      githubLink: "https://github.com/RakeshR-3110/Smart-Irrigation-and-Crop-Health-Monitoring-System",
       image: project,
       icon: <Code2 className="h-8 w-8" />,
       color: "from-green-500 to-green-600",
