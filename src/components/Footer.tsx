@@ -46,21 +46,21 @@ const Footer = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-3"
             >
               {!logoError ? (
                 <img
                   src="/logo.png"
                   alt="Inovx Logo"
-                  className="h-10 w-10 rounded-full object-cover"
+                  className="h-12 w-12 object-contain"
                   onError={handleLogoError}
                 />
               ) : (
-                <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 flex items-center justify-center text-white">
-                  <span className="text-lg font-bold">I</span>
+                <div className="h-12 w-12 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 flex items-center justify-center text-white shadow-md">
+                  <span className="text-xl font-bold">I</span>
                 </div>
               )}
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
                 InovX
               </span>
             </motion.div>
