@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, Globe, Smartphone, Database, Github, X, ArrowLeft } from "lucide-react";
+import { Code2, X} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import project from './projects/project.png';
@@ -93,7 +93,6 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
                         >
-                          <Github className="h-6 w-6" />
                         </a>
                       )}
                     </div>

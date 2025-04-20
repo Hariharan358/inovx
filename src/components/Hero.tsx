@@ -75,12 +75,12 @@ const Hero = () => {
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
                   <Button size="lg" className="bg-club-purple hover:bg-club-purple/90">
-                    Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                    Let's collab <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
                 <Link to="/members">
                   <Button size="lg" variant="outline" className="bg-club-blue hover:bg-club-purple/90">
-                    Learn More
+                    Team
                   </Button>
                 </Link>
               </motion.div>

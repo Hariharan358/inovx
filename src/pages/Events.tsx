@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { theme } from "@/lib/theme";
 import ImageSlider from "@/components/ImageSlider";
+import { Calendar, Clock, Users } from "lucide-react";
 
 // Event images from the public directory
 const eventImages = [
@@ -150,6 +151,72 @@ const Events = () => {
               Event Highlights
             </h2>
             <ImageSlider images={eventImages} interval={4000} />
+          </motion.div>
+
+          {/* Inauguration Event Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="w-full max-w-4xl mx-auto mb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-700 rounded-2xl p-6 shadow-xl border border-blue-100/50 dark:border-blue-900/30 overflow-hidden relative"
+          >
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400/10 dark:bg-blue-400/5 rounded-full -translate-y-12 translate-x-12"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-400/10 dark:bg-purple-400/5 rounded-full translate-y-12 -translate-x-12"></div>
+            
+            {/* Event Header */}
+            <div className="text-center mb-8 relative">
+              <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Inauguration Event</h3>
+              <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+            
+            {/* Event Details */}
+            <div className="space-y-6 relative">
+              {/* Date and Time Row */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                {/* Date */}
+                <div className="flex-1 bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm rounded-xl p-5 shadow-md border border-blue-100/50 dark:border-blue-900/30 hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 flex items-center justify-center mr-4 shadow-md">
+                      <Calendar className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Date</p>
+                      <p className="text-xl font-bold text-gray-900 dark:text-white">April 3, 2025</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Time */}
+                <div className="flex-1 bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm rounded-xl p-5 shadow-md border border-purple-100/50 dark:border-purple-900/30 hover:shadow-lg transition-shadow duration-300">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 dark:from-purple-600 dark:to-purple-700 flex items-center justify-center mr-4 shadow-md">
+                      <Clock className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Time</p>
+                      <p className="text-xl font-bold text-gray-900 dark:text-white">10:00 AM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Chief Guests */}
+              <div className="bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm rounded-xl p-5 shadow-md border border-blue-100/50 dark:border-blue-900/30 hover:shadow-lg transition-shadow duration-300">
+                <div className="flex items-center mb-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 dark:from-blue-600 dark:to-purple-600 flex items-center justify-center mr-4 shadow-md">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Chief Guests</p>
+                    <p className="text-xl font-bold text-gray-900 dark:text-white">Dhana Prabu Sekar & A2D Nandhakumar</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-300 ml-16">
+                  Join us for the grand inauguration of our club InovX REC. We are honored to have our esteemed alumni and successful entrepreneurs as our chief guests.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </motion.div>
