@@ -71,7 +71,7 @@ const teamsData = [
       },
       {
         name: "Rakesh R",
-        role: "Hardware Associate",
+        role: "Hardware Architect",
         image: rakesh,
         linkedin: "https://www.linkedin.com/in/rakesh-r-91a324274"
       },

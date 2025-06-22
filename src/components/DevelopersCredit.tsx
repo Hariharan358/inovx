@@ -31,7 +31,7 @@ const developers: Developer[] = [
   },
   {
     name: "Rakesh R",
-    linkedinUrl: "https://www.linkedin.com/in/rakesh-r-91a324274",
+    linkedinUrl: "http://www.linkedin.com/in/rakeshr311005",
     imageUrl: rakesh
   },
   {
