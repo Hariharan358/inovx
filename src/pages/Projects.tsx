@@ -4,6 +4,7 @@ import { Code2, X} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import project from './projects/project.png';
+import { Github } from "lucide-react";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
