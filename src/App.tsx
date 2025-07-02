@@ -10,7 +10,7 @@ import Members from "./pages/Members";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects";
-
+import EventPlacementPage from "./components/EventPlacementPage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +27,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/event-placement" element={<EventPlacementPage />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
