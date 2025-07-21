@@ -28,15 +28,16 @@ const Hero = () => {
     <section id="home" className="relative overflow-hidden text-white">
       {/* Video Background */}
       <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/videos/0223.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover object-center sm:object-cover"
+    >
+      <source src="/videos/0223.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>

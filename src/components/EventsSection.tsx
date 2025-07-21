@@ -1,10 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Volume2, VolumeX } from "lucide-react";
-import { Calendar, Sun, Moon } from "lucide-react";
-import React from "react";
-import { motion } from "framer-motion";
-import { MapPin, Clock } from "lucide-react";
 
 import ScrollVelocity from '../blocks/TextAnimations/ScrollVelocity/ScrollVelocity';
 import InovxLogo from "../img/logo.png";
