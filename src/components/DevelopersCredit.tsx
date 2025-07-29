@@ -88,9 +88,9 @@ const Title = styled.h2`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.5rem;
-  max-width: 1150px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
   margin: 0 auto;
 `;
 
@@ -98,8 +98,8 @@ const Card = styled.div`
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(12px);
-  border-radius: 24px;
-  padding: 2.5rem 1.5rem;
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -123,13 +123,13 @@ const Card = styled.div`
 `;
 
 const Avatar = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  margin: 0 auto 1.2rem auto;
-  border: 4px solid #60a5fa;
+  margin: 0 auto 0.8rem auto;
+  border: 3px solid #60a5fa;
   transition: all 0.3s ease;
 
   ${Card}:hover & {
@@ -139,10 +139,10 @@ const Avatar = styled.img`
 `;
 
 const Name = styled.h3`
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   position: relative;
   z-index: 2;
 `;
