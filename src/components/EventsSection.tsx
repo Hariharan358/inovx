@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Volume2, VolumeX } from "lucide-react";
 
 import ScrollVelocity from '../blocks/TextAnimations/ScrollVelocity/ScrollVelocity';
+import EventTimeline from './EventTimeline';
 import InovxLogo from "../img/logo.png";
  // Add Volume2 and VolumeX icons
 
@@ -41,6 +42,7 @@ const EventsSection = () => {
 
   return (
     <section id="events" className="py-20 bg-club-lightGray dark:bg-gray-900 transition-colors duration-300">
+       
        <ScrollVelocity 
   texts={['Innovation', 'Entrepreneurship']} 
   velocity={velocity} 
@@ -96,13 +98,11 @@ const EventsSection = () => {
           </div>
         </div>
 
-        
-          {/* Background pattern */}
-          
-          
-          
-        
+        {/* Background pattern */}
       </div>
+      
+      {/* Event Timeline Component */}
+    
     </section>
   );
 };

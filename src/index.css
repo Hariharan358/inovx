@@ -74,6 +74,54 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+
+  /* Mobile responsiveness fixes */
+  html {
+    overflow-x: hidden;
+  }
+
+  /* Ensure all containers respect mobile viewport */
+  .container {
+    @apply px-4 md:px-6 lg:px-8;
+    max-width: 100%;
+  }
+
+  /* Mobile-first responsive utilities */
+  .mobile-container {
+    @apply w-full px-4 md:px-6 lg:px-8;
+    max-width: 100vw;
+  }
+
+  /* Fix for mobile overflow issues */
+  .mobile-safe {
+    @apply overflow-x-hidden;
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  /* Responsive text sizing */
+  .mobile-text {
+    @apply text-sm md:text-base lg:text-lg;
+  }
+
+  .mobile-heading {
+    @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl;
+  }
+
+  /* Mobile grid adjustments */
+  .mobile-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6;
+  }
+
+  /* Mobile spacing utilities */
+  .mobile-padding {
+    @apply p-4 md:p-6 lg:p-8;
+  }
+
+  .mobile-margin {
+    @apply m-4 md:m-6 lg:m-8;
   }
 }
 

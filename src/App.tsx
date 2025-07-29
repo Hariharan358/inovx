@@ -27,6 +27,7 @@ const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: 30 }}
     transition={{ duration: 0.4, ease: "easeInOut" }}
+    className="mobile-safe"
     style={{ minHeight: "100vh" }}
   >
     {children}
@@ -99,9 +100,9 @@ const App = () => {
         <BrowserRouter>
           <ScrollToTop />
           <CurtainOverlay isVisible={showCurtain} />
-          <div className="min-h-screen flex flex-col transition-colors duration-300 bg-white">
+          <div className="mobile-safe min-h-screen flex flex-col transition-colors duration-300 bg-white">
             {/* You can add your Navigation and Footer here if needed */}
-            <main className="flex-1">
+            <main className="flex-1 mobile-safe">
               <AnimatedRoutes setShowCurtain={setShowCurtain} />
             </main>
           </div>

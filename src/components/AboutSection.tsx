@@ -69,14 +69,14 @@ const AboutSection: React.FC = () => {
 
           {/* Mission & Vision */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-            <div className="card bg-gray-100 dark:bg-black p-6 md:p-8 rounded-lg shadow-sm border border-black dark:border-gray-700">
+            <div className="card bg-gray-100 dark:bg-gray-900 p-6 md:p-8 rounded-lg shadow-sm border border-black dark:border-gray-600">
               <h3 className="card__title text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                 Our Mission
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
                 To foster innovation and entrepreneurship by providing students with the technical skills, business knowledge, and networking opportunities needed to succeed in today's competitive tech industry.
               </p>
-              <div className="code-block bg-black text-black p-4 md:p-6 rounded-lg font-mono text-xs md:text-sm overflow-auto">
+              <div className="code-block bg-gray-100 dark:bg-gray-800 text-black dark:text-green-300 p-4 md:p-6 rounded-lg font-mono text-xs md:text-sm overflow-auto border border-gray-300 dark:border-gray-600">
                 <pre>
                 <code>
   function createInnovation() &#123;
@@ -98,7 +98,7 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="card bg-gray-100 dark:bg-black p-6 md:p-8 rounded-lg shadow-sm border border-black dark:border-gray-700">
+            <div className="card bg-gray-100 dark:bg-gray-900 p-6 md:p-8 rounded-lg shadow-sm border border-black dark:border-gray-600">
               <h3 className="card__title text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                 Our Vision
               </h3>
@@ -124,7 +124,7 @@ const AboutSection: React.FC = () => {
                   stiffness: 100,
                   damping: 25,
                 }}
-                className="card bg-gray-100 dark:bg-black p-6 rounded-lg shadow-sm border border-gray-300 dark:border-white text-center"
+                className="card bg-gray-100 dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-300 dark:border-gray-600 text-center"
               >
                 <div className="h-12 w-12 mx-auto rounded-lg bg-club-purple/10 flex items-center justify-center mb-4">
                   {feature.icon}
@@ -148,9 +148,19 @@ const AboutSection: React.FC = () => {
           transition: transform 0.3s, box-shadow 0.3s;
         }
 
+        .dark .card {
+          background: #1f2937;
+          border: 6px solid #4b5563;
+          box-shadow: 12px 12px 0 #4b5563;
+        }
+
         .card:hover {
           transform: translate(-5px, -5px);
           box-shadow: 17px 17px 0 #000;
+        }
+
+        .dark .card:hover {
+          box-shadow: 17px 17px 0 #4b5563;
         }
 
         .card__title {
@@ -185,6 +195,10 @@ const AboutSection: React.FC = () => {
           margin-bottom: 20px;
         }
 
+        .dark .card__content {
+          color: #e5e7eb;
+        }
+
         .card__form {
           display: flex;
           flex-direction: column;
@@ -200,10 +214,22 @@ const AboutSection: React.FC = () => {
           width: calc(100% - 26px); /* Adjust for padding and border */
         }
 
+        .dark .card__form input {
+          border: 3px solid #4b5563;
+          background: #374151;
+          color: #e5e7eb;
+        }
+        }
+
         .card__form input:focus {
           outline: none;
           transform: scale(1.05);
           background-color: #000;
+          color: #ffffff;
+        }
+
+        .dark .card__form input:focus {
+          background-color: #4b5563;
           color: #ffffff;
         }
 
@@ -222,6 +248,11 @@ const AboutSection: React.FC = () => {
           transition: transform 0.3s;
           width: 50%;
           height: 100%;
+        }
+
+        .dark .card__button {
+          border: 3px solid #4b5563;
+          background: #4b5563;
         }
 
         .card__button::before {

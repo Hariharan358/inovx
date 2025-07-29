@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { theme } from "@/lib/theme";
 import ImageSlider from "@/components/ImageSlider";
+import EventTimeline from "@/components/EventTimeline";
 import { Calendar, Clock, Users } from "lucide-react";
 
 // Event images from the public directory
@@ -23,19 +24,19 @@ const Events = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-white dark:bg-black transition-colors"
+      className="mobile-safe min-h-screen bg-white dark:bg-black transition-colors"
     >
       <Navbar />
       
       <motion.div 
-        className="pt-20 pb-16"
+        className="pt-16 md:pt-20 pb-12 md:pb-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="container mx-auto px-4">
+        <div className="mobile-container mx-auto">
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white"
+            className="mobile-heading font-bold text-center mb-4 text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -44,7 +45,7 @@ const Events = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto"
+            className="mobile-text text-gray-600 dark:text-gray-300 text-center mb-8 md:mb-12 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -57,7 +58,7 @@ const Events = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="mb-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-xl shadow-md relative overflow-hidden group"
+            className="mb-8 md:mb-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 md:p-8 rounded-xl shadow-md relative overflow-hidden group"
             whileHover={{ 
               scale: 1.02,
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
@@ -68,7 +69,7 @@ const Events = () => {
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-purple-400/10 dark:bg-purple-400/5 rounded-full translate-x-16 translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
             
             <motion.h3 
-              className="text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white relative"
+              className="text-xl md:text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white relative"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -84,7 +85,7 @@ const Events = () => {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="relative"
             >
-              <p className="text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
+              <p className="mobile-text text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
                 Join us for the grand inauguration of our club InovX REC on <span className="font-semibold text-blue-600 dark:text-blue-400">April 3, 2025</span>. We are honored to have 
                 <motion.span 
                   className="font-semibold text-blue-600 dark:text-blue-400 inline-block mx-1"
@@ -220,8 +221,9 @@ const Events = () => {
           </motion.div>
         </div>
       </motion.div>
-      
+      <EventTimeline/>
       <EventsSection />
+      
       <Footer />
     </motion.div>
   );

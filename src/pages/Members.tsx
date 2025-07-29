@@ -302,9 +302,9 @@ const teamsData = [
 
 const Members = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="mobile-safe min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Navbar />
-      <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+      <div className="py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
       <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -312,10 +312,10 @@ const Members = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h1 className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-4">
+            <h1 className="mobile-heading font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 mb-4">
               Our Team
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
+            <p className="mobile-text text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
               Meet the talented individuals behind InovX who are driving innovation forward.
             </p>
             
@@ -353,7 +353,7 @@ const Members = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
+              <div className="mobile-grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
                 {team.members.map((member, index) => (
                   <motion.div
                     key={member.name}

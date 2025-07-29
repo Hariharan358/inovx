@@ -35,9 +35,9 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="mobile-safe min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navbar />
-      <div className="py-20 px-4 sm:px-6 lg:px-8">
+      <div className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,10 +45,10 @@ const Projects = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="mobile-heading font-bold text-gray-900 dark:text-white mb-4">
               Our Projects
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="mobile-text text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Explore our latest projects and contributions to the tech community.
             </p>
           </motion.div>
