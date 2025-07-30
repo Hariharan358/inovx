@@ -63,7 +63,6 @@ const EventDetail = () => {
       
       <div className="max-w-4xl mx-auto py-12 px-4 relative z-10">
         <button className="mb-6 text-blue-600 hover:underline" onClick={() => navigate(-1)}>&larr; Back</button>
-        <img src={event.image} alt={event.title} className="w-full max-h-96 object-cover rounded-xl mb-8 shadow-lg" />
         <h1 className="text-4xl font-bold mb-2">{event.title}</h1>
         <div className="text-lg text-gray-600 dark:text-gray-300 mb-4">{event.date} | {event.venue}</div>
         <p className="mb-8 text-lg text-gray-700 dark:text-gray-200">{event.about}</p>
