@@ -11,7 +11,7 @@ const eventData = {
     title: "Crack the Case",
     image: banner,
     date: "5th & 6th August 2025",
-    venue: "Main Seminar Hall",
+    venue: "Main Seminar Hall, B Block",
     about: `Crack the Case is a national-level, business strategy case competition where student teams take on a real-world fintech challenge inspired by India's digital financial transformation. Analyze, strategize, and pitch your way through a high-stakes scenario built around innovation, inclusion, and disruption.`,
     timeline: [
       { label: "Registration Opens", date: "July 30, 2025" },
@@ -100,7 +100,12 @@ const EventDetail = () => {
         {/* Venue */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">Venue</h2>
-          <div className="text-gray-700 dark:text-gray-200">{event.venue}</div>
+          <div className="flex items-center text-gray-700 dark:text-gray-200">
+            <svg className="h-5 w-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+            </svg>
+            Main Seminar Hall, B Block
+          </div>
         </div>
 
         {/* Sample Case */}
