@@ -1,6 +1,10 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import banner from "../../components/Members/banner.jpg"
+import FeatureSection from '../../app/components/ui/Featuresection';
+import phase1 from "./images/phase1.png"
+import phase2 from "./images/phase2.png"
+import phase3 from "./images/phase3.png"
 
 const eventData = {
   "crack-the-case": {
@@ -10,9 +14,9 @@ const eventData = {
     venue: "Main Seminar Hall",
     about: `Crack the Case is a national-level, business strategy case competition where student teams take on a real-world fintech challenge inspired by India's digital financial transformation. Analyze, strategize, and pitch your way through a high-stakes scenario built around innovation, inclusion, and disruption.`,
     timeline: [
-      { label: "Registration Opens", date: "July 10, 2025" },
-      { label: "Online Screening Submission Deadline", date: "July 30, 2025" },
-      { label: "Shortlist Announcement", date: "August 2, 2025" },
+      { label: "Registration Opens", date: "July 30, 2025" },
+      { label: "Online Screening Submission Deadline", date: "August 2, 2025" },
+      { label: "Shortlist Announcement", date: "August 3, 2025" },
       { label: "Offline Prelims", date: "August 5, 2025" },
       { label: "Finale & Guest Session", date: "August 6, 2025" },
     ],
@@ -56,14 +60,6 @@ const EventDetail = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors relative overflow-hidden">
-      {/* Background Image - Bottom Left Corner */}
-      <div className="fixed bottom-0 left-0 w-32 h-32 md:w-64 md:h-64 opacity-10 md:opacity-20 pointer-events-none z-0">
-        <img 
-          src="/woman-portrait.png" 
-          alt="Decorative background" 
-          className="w-full h-full object-cover"
-        />
-      </div>
       
       <div className="max-w-4xl mx-auto py-12 px-4 relative z-10">
         <button className="mb-6 text-blue-600 hover:underline" onClick={() => navigate(-1)}>&larr; Back</button>
@@ -80,15 +76,27 @@ const EventDetail = () => {
           ))}
         </ul>
 
-        {/* Schedule/Phases */}
-        <h2 className="text-2xl font-semibold mb-2">Event Schedule & Phases</h2>
-        <ol className="mb-8 list-decimal list-inside space-y-2">
-          {event.schedule.map((phase, idx) => (
-            <li key={idx}>
-              <strong>{phase.phase}:</strong> {phase.details}
-            </li>
-          ))}
-        </ol>
+        {/* Event Schedule/Phases */}
+        <FeatureSection
+          title="Event Schedule & Phases"
+          features={[
+            {
+              step: 'Phase 1: Online Screening',
+              content: 'Submit your proposed solution (PDF or slide deck). Our internal panel will evaluate submissions based on originality, feasibility, and clarity. Only shortlisted teams will qualify for the next phase.',
+              image: phase1,
+            },
+            {
+              step: 'Phase 2: Offline Prelims (5th Aug)',
+              content: 'Qualified teams will solve a detailed live case and present structured solutions. Teams qualifying for this phase must complete registration and pay an entry fee to confirm their spot.',
+              image: phase2,
+            },
+            {
+              step: 'Phase 3: Finale + Guest Session (6th Aug)',
+              content: 'A keynote session by our Chief Guest, followed by final presentations from the Top 5 teams to an expert jury panel.',
+              image: phase3,
+            },
+          ]}
+        />
 
         {/* Venue */}
         <div className="mb-8">
@@ -121,16 +129,23 @@ const EventDetail = () => {
         </div>
 
         {/* Chief Guest Section */}
-        <div className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl shadow-md">
-          <h2 className="text-2xl font-bold mb-2 text-blue-800 dark:text-blue-300">Chief Guest</h2>
-          <div className="text-xl font-semibold mb-1">{event.chiefGuest.name}</div>
-          <div className="text-gray-700 dark:text-gray-200 mb-2">{event.chiefGuest.title}</div>
-          <ul className="mb-2 list-disc list-inside space-y-1">
-            {event.chiefGuest.expertise.map((exp, idx) => (
-              <li key={idx}>{exp}</li>
-            ))}
-          </ul>
-          <div className="text-gray-700 dark:text-gray-200">{event.chiefGuest.bio}</div>
+        <div className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl shadow-md flex flex-col md:flex-row items-center md:items-start gap-6">
+          <img 
+            src="/woman-portrait.png" 
+            alt="Chief Guest portrait" 
+            className="w-32 h-32 md:w-40 mr-3 p-1 md:h-40 object-cover rounded-full border-4 border-blue-200 shadow-md mb-4 md:mb-0" 
+          />
+          <div className="flex-1">
+            <h2 className="text-2xl font-bold mb-2 text-blue-800 dark:text-blue-300">Chief Guest</h2>
+            <div className="text-xl font-semibold mb-1">{event.chiefGuest.name}</div>
+            <div className="text-gray-700 dark:text-gray-200 mb-2">{event.chiefGuest.title}</div>
+            <ul className="mb-2 list-disc list-inside space-y-1">
+              {event.chiefGuest.expertise.map((exp, idx) => (
+                <li key={idx}>{exp}</li>
+              ))}
+            </ul>
+            <div className="text-gray-700 dark:text-gray-200">{event.chiefGuest.bio}</div>
+          </div>
         </div>
 
         {/* Team, Fee, Prizes */}
