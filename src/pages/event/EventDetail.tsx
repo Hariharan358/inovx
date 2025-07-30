@@ -127,6 +127,24 @@ const EventDetail = () => {
           <a href={event.questionDoc} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">Download the Case Question (PDF)</a>
         </div>
 
+        {/* Important Note */}
+        <div className="mb-8 p-6 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 rounded-lg">
+          <div className="flex items-start">
+            <div className="flex-shrink-0">
+              <svg className="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="ml-3">
+              <h3 className="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Important Note</h3>
+              <div className="text-yellow-700 dark:text-yellow-300">
+                <p className="mb-2"><strong>Choose Only One Problem Statement:</strong> From the case question PDF, select and answer only one problem statement that you find most suitable for your team's expertise.</p>
+                <p><strong>Evaluation Criteria:</strong> Your submission will be evaluated based on your responses to the 6 questions outlined in the case question PDF. Ensure your solution addresses all evaluation criteria comprehensively.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Chief Guest Section */}
         <div className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl shadow-md flex flex-col md:flex-row items-center md:items-start gap-6">
           <img 
