@@ -27,7 +27,7 @@ const Profile = () => {
       {/* Background Portrait - Bottom Right Corner */}
       <motion.div 
         style={{ y, opacity }}
-        className="fixed bottom-0 right-0 w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0"
+        className="fixed bottom-0 right-0 w-[400px] h-[400px] md:w-[700px] md:h-[700px] lg:w-[800px] lg:h-[800px] xl:w-[900px] xl:h-[900px] pointer-events-none z-0"
       >
         <div className="relative w-full h-full">
                      {/* Glow Effect */}
@@ -42,11 +42,11 @@ const Profile = () => {
             />
             
                          {/* Decorative Elements */}
-             <div className="absolute -top-6 -right-6 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full animate-bounce"></div>
-             <div className="absolute -bottom-4 -left-4 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full animate-pulse"></div>
+             <div className="absolute -top-8 -right-8 w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full animate-bounce"></div>
+             <div className="absolute -bottom-6 -left-6 w-12 h-12 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full animate-pulse"></div>
              
              {/* Dotted Lines */}
-             <div className="absolute -top-12 -left-12 w-24 h-24 md:w-32 md:h-32 border-2 border-dotted border-purple-400/50 rounded-full animate-spin-slow"></div>
+             <div className="absolute -top-16 -left-16 w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 border-2 border-dotted border-purple-400/50 rounded-full animate-spin-slow"></div>
           </div>
         </div>
       </motion.div>

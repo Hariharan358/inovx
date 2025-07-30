@@ -2,14 +2,15 @@ import { FaLinkedin } from 'react-icons/fa';
 import styled from 'styled-components';
 import gova from './Members/GOVA.jpg';
 import rakesh from './Members/rakesh.jpg';
-import hari from './Members/hari.jpg';
+import hari from './Members/harii.jpg';
 import santhosh from './Members/santhosh.jpg';
 import thejas from './Members/thejas.jpg';
+import { useEffect, useState } from 'react';
 
 interface Developer {
   name: string;
   linkedinUrl: string;
-  imageUrl?: string;
+  imageUrl?: string;  
 }
 
 const developers: Developer[] = [
@@ -40,9 +41,13 @@ const developers: Developer[] = [
   }
 ];
 
-const Wrapper = styled.div`
-  background: linear-gradient(120deg, #f9fafc, #e2e8f0);
+const Wrapper = styled.div<{ isDark: boolean }>`
+  background: ${props => props.isDark 
+    ? 'linear-gradient(120deg, #0f172a, #1e293b)' 
+    : 'linear-gradient(120deg, #f9fafc, #e2e8f0)'
+  };
   padding: 4rem 1rem;
+  transition: background 0.3s ease;
 `;
 const LinkedIn = styled.a`
   font-size: 0.95rem;
@@ -78,12 +83,13 @@ const LinkedIn = styled.a`
   }
 `;
 
-const Title = styled.h2`
+const Title = styled.h2<{ isDark: boolean }>`
   text-align: center;
   font-size: 2.75rem;
   font-weight: 800;
-  color: #0f172a;
+  color: ${props => props.isDark ? '#f8fafc' : '#0f172a'};
   margin-bottom: 3.5rem;
+  transition: color 0.3s ease;
 `;
 
 const Grid = styled.div`
@@ -94,21 +100,33 @@ const Grid = styled.div`
   margin: 0 auto;
 `;
 
-const Card = styled.div`
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+const Card = styled.div<{ isDark: boolean }>`
+  background: ${props => props.isDark 
+    ? 'rgba(30, 41, 59, 0.8)' 
+    : 'rgba(255, 255, 255, 0.15)'
+  };
+  border: 1px solid ${props => props.isDark 
+    ? 'rgba(148, 163, 184, 0.3)' 
+    : 'rgba(255, 255, 255, 0.3)'
+  };
   backdrop-filter: blur(12px);
   border-radius: 24px; /* Larger radius */
   padding: 2.2rem 1.2rem; /* Larger padding */
   text-align: center;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: ${props => props.isDark 
+    ? '0 8px 30px rgba(0, 0, 0, 0.3)' 
+    : '0 8px 30px rgba(0, 0, 0, 0.05)'
+  };
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
   position: relative;
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: ${props => props.isDark 
+      ? '0 12px 40px rgba(0, 0, 0, 0.4)' 
+      : '0 12px 40px rgba(0, 0, 0, 0.1)'
+    };
   }
 
   &:hover::before {
@@ -138,25 +156,46 @@ const Avatar = styled.img`
   }
 `;
 
-const Name = styled.h3`
+const Name = styled.h3<{ isDark: boolean }>`
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1f2937;
+  color: ${props => props.isDark ? '#f1f5f9' : '#1f2937'};
   margin-bottom: 0.5rem;
   position: relative;
   z-index: 2;
+  transition: color 0.3s ease;
 `;
 
 
 const DevelopersCredit = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      setIsDark(isDarkMode);
+    };
+
+    checkTheme();
+    
+    // Listen for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <Wrapper>
-      <Title>Developed By</Title>
+    <Wrapper isDark={isDark}>
+      <Title isDark={isDark}>Developed By</Title>
       <Grid>
         {developers.map((dev, index) => (
-          <Card key={index} onClick={() => window.open(dev.linkedinUrl, '_blank')}>
+          <Card key={index} isDark={isDark} onClick={() => window.open(dev.linkedinUrl, '_blank')}>
             {dev.imageUrl && <Avatar src={dev.imageUrl} alt={dev.name} />}
-            <Name>{dev.name}</Name>
+            <Name isDark={isDark}>{dev.name}</Name>
             <LinkedIn href={dev.linkedinUrl} target="_blank" rel="noopener noreferrer">
               <FaLinkedin style={{ marginRight: '6px' }} />LinkedIn
             </LinkedIn>

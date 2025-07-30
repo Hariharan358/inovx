@@ -27,7 +27,16 @@ const EventSlider: React.FC<EventSliderProps> = ({ events }) => {
       <div className="flex transition-all duration-700" style={{ transform: `translateX(-${current * 100}%)` }}>
         {events.map((event, idx) => (
           <div key={event.id} className="min-w-full p-12 flex flex-col items-center justify-center"> {/* Increased padding */}
-            <img src={event.image} alt={event.title} className="w-full max-h-[340px] object-cover rounded-2xl mb-8 shadow-lg" /> {/* Larger image */}
+            <div className="relative w-full">
+              <img src={event.image} alt={event.title} className="w-full max-h-[340px] object-cover rounded-2xl mb-8 shadow-lg" /> {/* Larger image */}
+              {event.id === "crack-the-case" && (
+                <div className="absolute top-4 right-4">
+                  <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg animate-pulse">
+                    LIVE
+                  </span>
+                </div>
+              )}
+            </div>
             <h3 className="text-4xl font-extrabold mb-3 text-center">{event.title}</h3>
             <div className="text-lg text-gray-600 dark:text-gray-300 mb-2 text-center">{event.date} | {event.venue}</div>
             <p className="mb-6 text-xl text-center text-gray-700 dark:text-gray-200">{event.shortDescription}</p>
@@ -35,7 +44,7 @@ const EventSlider: React.FC<EventSliderProps> = ({ events }) => {
               className="mt-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition"
               onClick={() => navigate(`/event/${event.id}`)}
             >
-              Learn More
+              Register Now!
             </button>
           </div>
         ))}

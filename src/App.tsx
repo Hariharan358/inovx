@@ -79,12 +79,12 @@ const AnimatedRoutes = ({ setShowCurtain }: { setShowCurtain: (v: boolean) => vo
         <Route path="/" element={<PageWrapper><Index /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/events" element={<PageWrapper><Events /></PageWrapper>} />
-        <Route path="/members" element={<PageWrapper><Members /></PageWrapper>} />
+        {/* <Route path="/members" element={<PageWrapper><Members /></PageWrapper>} /> */}
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
         <Route path="/event-placement" element={<PageWrapper><EventPlacementPage /></PageWrapper>} />
         <Route path="/event/:id" element={<PageWrapper><EventDetail /></PageWrapper>} />
-        <Route path="/event/inauguration" element={<PageWrapper><Inauguration /></PageWrapper>} />
+        <Route path="/events/:id" element={<PageWrapper><Inauguration /></PageWrapper>} />
         <Route path="/profile" element={<PageWrapper><Profile /></PageWrapper>} />
         <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>

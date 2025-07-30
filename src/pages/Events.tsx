@@ -7,6 +7,10 @@ import { theme } from "@/lib/theme";
 import ImageSlider from "@/components/ImageSlider";
 import { Calendar, Clock, Users } from "lucide-react";
 import { useInView } from 'react-intersection-observer';
+import carck from "../components/Members/crack.jpg"
+import webinar from "../components/eventimg/webinar_bargay.png"
+import placement from "../components/eventimg/placemnt.jpg"
+import student from "../components/eventimg/buvi.jpg"
 
 // Event images from the public directory
 const eventImages = [
@@ -16,6 +20,7 @@ const eventImages = [
   "/slider/image4.jpg",
   "/slider/image5.jpg",
   "/slider/image6.jpg",
+  
 ];
 
 const timelineEvents = [
@@ -27,27 +32,27 @@ const timelineEvents = [
     description: "A national-level, business strategy case competition. Analyze, strategize, and pitch your way through a real-world fintech challenge inspired by India's digital financial transformation.",
     link: "/event/crack-the-case",
     type: "upcoming",
-    image: "/slider/image1.jpg",
+    image: carck,
   },
   {
     id: "student-networking",
     title: "Student Networking Session",
-    date: "15th July 2025",
-    venue: "Conference Hall",
+    date: "25th July 2025",
+    venue: "A105, Admin Block",
     description: "Connect with fellow students, alumni, and industry professionals. Build meaningful relationships and expand your professional network in an interactive networking environment.",
-    link: "/event/student-networking",
+    link: "/events/student-networking",
     type: "past",
-    image: "/slider/image2.jpg",
+    image: student,
   },
   {
     id: "workato-hackathon",
     title: "Workato AI Placements Hackathon",
-    date: "20th June 2025",
+    date: "9th & 10th July, 2025",
     venue: "Computer Lab",
     description: "A competitive hackathon focused on AI and automation solutions. Work with cutting-edge technologies and showcase your skills to potential employers from Workato.",
-    link: "/event/workato-hackathon",
+    link: "/events/workato-hackathon",
     type: "past",
-    image: "/slider/image3.jpg",
+    image: "/events/IMG_7717.JPG",
   },
   {
     id: "research-webinar",
@@ -55,9 +60,9 @@ const timelineEvents = [
     date: "10th May 2025",
     venue: "Online",
     description: "Learn about research internship opportunities, application processes, and how to prepare for research roles. Expert insights from successful research interns and professors.",
-    link: "/event/research-webinar",
+    link: "/events/research-webinar",
     type: "past",
-    image: "/slider/image4.jpg",
+    image: webinar,
   },
   {
     id: "placement-session",
@@ -65,9 +70,9 @@ const timelineEvents = [
     date: "3rd May 2025",
     venue: "A105, Admin Block",
     description: "Learn directly from recruiters and alumni about resume building, internships, job portals, and placement strategies that will shape your future. Featuring Mohammed faheed.",
-    link: "/event-placement",
+    link: "events/event-placement",
     type: "past",
-    image: "/slider/image5.jpg",
+    image: placement,
   },
   {
     id: "inauguration",
@@ -75,7 +80,7 @@ const timelineEvents = [
     date: "April 3, 2025",
     venue: "REC Campus",
     description: "Join us for the grand inauguration of our club InovX REC. This milestone event marks the beginning of our journey to foster innovation, creativity, and technological excellence within our community.",
-    link: "/event/inauguration",
+    link: "/events/inovx",
     type: "past",
     image: "/slider/image6.jpg",
   },
@@ -100,7 +105,7 @@ const Events = () => {
       >
         <div className="container mx-auto px-4">
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -109,7 +114,7 @@ const Events = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto"
+            className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto text-lg md:text-xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -117,56 +122,104 @@ const Events = () => {
             Discover our upcoming and past events, workshops, and meetups designed to foster innovation and learning.
           </motion.p>
           
-          {/* Timeline Vertical Scroller */}
-          <div className="relative mx-auto max-w-6xl py-16">
-            <div className="absolute left-1/2 top-0 w-1 bg-gradient-to-b from-blue-500 via-purple-400 to-pink-400 h-full -translate-x-1/2 z-0 rounded-full hidden md:block"></div>
-            <div className="relative z-10 space-y-24">
+          {/* Enhanced Timeline */}
+          <div className="relative mx-auto max-w-7xl py-16">
+            {/* --- Decorative Background Elements --- */}
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+              {/* Gradient Blobs */}
+              <div className="absolute top-[-80px] left-[-120px] w-96 h-96 bg-gradient-to-br from-blue-400/30 via-purple-400/20 to-pink-400/30 rounded-full blur-3xl animate-pulse-slow"></div>
+              <div className="absolute bottom-[-100px] right-[-100px] w-[28rem] h-[28rem] bg-gradient-to-tr from-pink-400/20 via-yellow-300/20 to-blue-400/20 rounded-full blur-3xl animate-pulse-slower"></div>
+              {/* Subtle Lines */}
+              <div className="absolute left-1/2 top-0 w-0.5 h-full bg-gradient-to-b from-blue-200/30 via-purple-200/20 to-pink-200/30 -translate-x-1/2"></div>
+              {/* Floating Icons */}
+              <svg className="absolute left-1/4 top-24 w-10 h-10 text-blue-300/30 animate-float-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.07-7.07l-1.41 1.41M6.34 17.66l-1.41 1.41m12.02 0l1.41-1.41M6.34 6.34L4.93 4.93" /></svg>
+              <svg className="absolute right-1/4 bottom-32 w-8 h-8 text-pink-300/30 animate-float" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2" /></svg>
+            </div>
+            {/* --- End Decorative Background Elements --- */}
+            {/* Central vertical timeline line (progress style, animated) */}
+            <motion.div
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 1.2, ease: 'easeOut' }}
+              className="absolute left-1/2 top-0 w-1 bg-gradient-to-b from-blue-500 via-purple-400 to-pink-400 h-full -translate-x-1/2 z-0 rounded-full hidden lg:block origin-top"
+            />
+            <div className="relative z-10 space-y-20 lg:space-y-40">
               {timelineEvents.map((event, idx) => {
                 const isUpcoming = event.type === 'upcoming';
                 const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
                 const isLeft = idx % 2 === 0;
                 return (
                   <div key={event.id} className="relative">
-                    {/* Timeline Dot */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:block">
-                      <motion.div
-                        className={`w-8 h-8 rounded-full border-4 border-white dark:border-gray-900 shadow-lg ${isUpcoming ? 'bg-red-500 animate-blink' : 'bg-gradient-to-br from-blue-500 to-purple-500 animate-pulse'}`}
-                        layoutId={`dot-${event.id}`}
-                      />
-                    </div>
                     
-                    {/* Event Card */}
-                    <div className={`flex ${isLeft ? 'justify-start' : 'justify-end'} md:${isLeft ? 'justify-start' : 'justify-end'} justify-center`}>
-                      <motion.div
-                        ref={ref}
-                        initial={{ opacity: 0, y: 60 }}
-                        animate={inView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.7, delay: idx * 0.1, type: 'spring', stiffness: 60 }}
-                        className={`w-full max-w-md ${isLeft ? 'mr-auto pr-12' : 'ml-auto pl-12'} md:${isLeft ? 'mr-auto pr-12' : 'ml-auto pl-12'} mx-auto md:mx-0`}
-                      >
-                        <div className="bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 rounded-2xl shadow-2xl overflow-hidden">
-                          <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
-                          <div className="px-7 py-6">
-                            <div className="flex items-center justify-between mb-2">
-                              <h3 className="text-2xl font-bold mb-0">{event.title}</h3>
+                    
+                                         {/* Event Card Container */}
+                     <div className={`flex ${isLeft ? 'justify-start' : 'justify-end'} justify-center`}>
+                       <motion.div
+                         ref={ref}
+                         initial={{ opacity: 0, x: isLeft ? -60 : 60, y: 60 }}
+                         animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+                         transition={{ duration: 0.8, delay: idx * 0.15, type: 'spring', stiffness: 50 }}
+                         className={`w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl ${isLeft ? 'mr-auto pr-8 lg:pr-48' : 'ml-auto pl-8 lg:pl-48'} mx-auto lg:mx-0`}
+                       >
+                                                 <motion.div 
+                           animate={{ y: [0, -5, 0] }}
+                           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                           className="bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 hover:scale-105 relative group"
+                         >
+                           {/* Glow Effect */}
+                           <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"></div>
+                          {/* Image Container */}
+                          <div className="relative">
+                            <img src={event.image} alt={event.title} className="w-full h-48 md:h-56 lg:h-64 object-cover" />
+                            {/* Badge Overlay */}
+                            <div className="absolute top-4 right-4 flex flex-col space-y-2">
+                              {event.id === "crack-the-case" && (
+                                <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg animate-pulse">
+                                  LIVE
+                                </span>
+                              )}
                               {isUpcoming && (
-                                <span className="ml-3 px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow">Upcoming</span>
+                                <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg">
+                                  Upcoming
+                                </span>
                               )}
                             </div>
-                            <div className="text-sm text-gray-500 mb-2">{event.date} | {event.venue}</div>
-                            <p className="mb-3 text-gray-700 dark:text-gray-200">{event.description}</p>
+                          </div>
+                          
+                          {/* Content */}
+                          <div className="px-6 md:px-8 py-6 md:py-8">
+                            <div className="mb-4">
+                              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-gray-900 dark:text-white leading-tight">
+                                {event.title}
+                              </h3>
+                              <div className="flex items-center text-sm md:text-base text-gray-500 dark:text-gray-400 mb-3">
+                                <span className="font-medium">{event.date}</span>
+                                <span className="mx-2">•</span>
+                                <span>{event.venue}</span>
+                              </div>
+                            </div>
+                            
+                            <p className="text-sm md:text-base text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
+                              {event.description}
+                            </p>
+                            
                             {event.link && (
-                              <a href={event.link} className="inline-block mt-2 px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition">Learn More</a>
+                              <a 
+                                href={event.link} 
+                                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg"
+                              >
+                                Learn More
+                                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </a>
                             )}
                           </div>
-                        </div>
+                        </motion.div>
                       </motion.div>
                     </div>
                     
-                    {/* Connecting Line */}
-                    {idx < timelineEvents.length - 1 && (
-                      <div className="absolute left-1/2 top-full w-1 h-24 bg-gradient-to-b from-blue-400 to-purple-400 -translate-x-1/2 hidden md:block"></div>
-                    )}
+                    
                   </div>
                 );
               })}

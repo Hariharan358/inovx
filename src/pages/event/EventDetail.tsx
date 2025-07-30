@@ -1,10 +1,11 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import banner from "../../components/Members/banner.jpg"
 
 const eventData = {
   "crack-the-case": {
     title: "Crack the Case",
-    image: "/slider/image1.jpg",
+    image: banner,
     date: "5th & 6th August 2025",
     venue: "Main Seminar Hall",
     about: `Crack the Case is a national-level, business strategy case competition where student teams take on a real-world fintech challenge inspired by India's digital financial transformation. Analyze, strategize, and pitch your way through a high-stakes scenario built around innovation, inclusion, and disruption.`,
@@ -40,7 +41,8 @@ const eventData = {
     teamSize: "2–3 students",
     entryFee: "Applicable only for teams advancing to Phase 2",
     prizes: "Certificates and accolades for finalists"
-  }
+  },
+
 };
 
 const EventDetail = () => {
@@ -137,7 +139,7 @@ const EventDetail = () => {
           <strong>Entry fee:</strong> {event.entryFee}<br />
           <strong>Prizes:</strong> {event.prizes}
         </div>
-        <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition">Register</button>
+       <a href="https://forms.gle/EshASRSpyHivzLgN6"> <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition">Register</button></a>
       </div>
     </div>
   );
