@@ -81,7 +81,6 @@ const Footer = () => {
                 { name: 'Home', path: '/' },
                 { name: 'About', path: '/about' },
                 { name: 'Projects', path: '/projects' },
-                { name: 'Members', path: '/members' },
                 { name: 'Contact', path: '/contact' }
               ].map((item) => (
                 <motion.li 
@@ -140,7 +139,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-600 dark:text-gray-300"
         >
-          &copy; {new Date().getFullYear()} InovX. All rights reserved.
+           A Student-Community from Rajalakshmi Engineering College.
         </motion.div>
       </div>
 

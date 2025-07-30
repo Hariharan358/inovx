@@ -88,9 +88,9 @@ const Title = styled.h2`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.5rem;
-  max-width: 1150px;
+  grid-template-columns: repeat(5, 1fr); /* Always 5 columns */
+  gap: 2rem; /* Moderate gap */
+  max-width: 1300px; /* Wider to fit larger cards */
   margin: 0 auto;
 `;
 
@@ -98,8 +98,8 @@ const Card = styled.div`
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(12px);
-  border-radius: 24px;
-  padding: 2.5rem 1.5rem;
+  border-radius: 24px; /* Larger radius */
+  padding: 2.2rem 1.2rem; /* Larger padding */
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -123,8 +123,8 @@ const Card = styled.div`
 `;
 
 const Avatar = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 110px; /* Larger avatar */
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
@@ -134,7 +134,7 @@ const Avatar = styled.img`
 
   ${Card}:hover & {
     border-color: #3b82f6;
-    box-shadow: 0 0 12px rgba(96, 165, 250, 0.5);
+    box-shadow: 0 0 14px rgba(96, 165, 250, 0.5);
   }
 `;
 

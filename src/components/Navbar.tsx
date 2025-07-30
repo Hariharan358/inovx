@@ -25,9 +25,9 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
-    { name: "Events", path: "/event-placement" },
-    { name: "Members", path: "/members" },
-    { name: "Contact", path: "/contact" },
+    { name: "Events", path: "/events" },
+    { name: "Profile", path: "/profile" },
+    { name: "Register", path: "/event/crack-the-case" },
   ];
 
   return (
@@ -35,9 +35,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
         <img src="/slider/logo.jpg" alt="InovX Logo" className="h-10 w-10 rounded-full object-cover" />
-        <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-          InovX
-        </span>
+        <span className="text-xl px-2 font-bold">InovX</span>
       </Link>
 
       {/* Desktop Navigation */}
@@ -135,7 +133,7 @@ const Navbar = () => {
             ))}
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>  
     </nav>
   );
 };

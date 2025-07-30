@@ -19,6 +19,9 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects";
 import EventPlacementPage from "./components/EventPlacementPage";
+import EventDetail from "./pages/event/EventDetail";
+import Inauguration from "./pages/event/Inauguration";
+import Profile from "./pages/Profile";
 
 // Page content animation wrapper
 const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -80,6 +83,9 @@ const AnimatedRoutes = ({ setShowCurtain }: { setShowCurtain: (v: boolean) => vo
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
         <Route path="/event-placement" element={<PageWrapper><EventPlacementPage /></PageWrapper>} />
+        <Route path="/event/:id" element={<PageWrapper><EventDetail /></PageWrapper>} />
+        <Route path="/event/inauguration" element={<PageWrapper><Inauguration /></PageWrapper>} />
+        <Route path="/profile" element={<PageWrapper><Profile /></PageWrapper>} />
         <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
