@@ -138,7 +138,6 @@ const EventDetail = () => {
             <div className="ml-3">
               <h3 className="text-lg font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Important Note</h3>
               <div className="text-yellow-700 dark:text-yellow-300">
-                <p className="mb-2"><strong>Choose Only One Problem Statement:</strong> From the case question PDF, select and answer only one problem statement that you find most suitable for your team's expertise.</p>
                 <p><strong>Evaluation Criteria:</strong> Your submission will be evaluated based on your responses to the 6 questions outlined in the case question PDF. Ensure your solution addresses all evaluation criteria comprehensively.</p>
               </div>
             </div>
