@@ -21,8 +21,8 @@ const eventData = {
       { label: "Finale & Guest Session", date: "August 6, 2025" },
     ],
     schedule: [
-      { phase: "Phase 1: Online Screening", details: "Submit your proposed solution (PDF or slide deck). Our internal panel will evaluate submissions based on originality, feasibility, and clarity. Only shortlisted teams will qualify for the next phase." },
-      { phase: "Phase 2: Offline Prelims (5th Aug)", details: "Qualified teams will solve a detailed live case and present structured solutions. Teams qualifying for this phase must complete registration and pay an entry fee to confirm their spot." },
+      { phase: "Phase 1: Online Submission", details: "Submit your proposed solution (PDF or slide deck). Our internal panel will evaluate submissions based on originality, feasibility, and clarity. Only shortlisted teams will qualify for the next phase." },
+      { phase: "Phase 2: Offline Prelims (5th Aug)", details: "Qualified teams will solve a detailed live case and present structured solutions." },
       { phase: "Phase 3: Finale + Guest Session (6th Aug)", details: "A keynote session by our Chief Guest, followed by final presentations from the Top 5 teams to an expert jury panel." }
     ],
     sampleCase: {
