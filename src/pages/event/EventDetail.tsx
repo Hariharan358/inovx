@@ -15,8 +15,8 @@ const eventData = {
     about: `Crack the Case is a national-level, business strategy case competition where student teams take on a real-world fintech challenge inspired by India's digital financial transformation. Analyze, strategize, and pitch your way through a high-stakes scenario built around innovation, inclusion, and disruption.`,
     timeline: [
       { label: "Registration Opens", date: "July 30, 2025" },
-      { label: "Online Screening Submission Deadline", date: "August 2, 2025" },
-      { label: "Shortlist Announcement", date: "August 3, 2025" },
+      { label: "Online Screening Submission Deadline", date: "August 3, 2025" },
+      { label: "Shortlist Announcement", date: "August 4, 2025" },
       { label: "Offline Prelims", date: "August 5, 2025" },
       { label: "Finale & Guest Session", date: "August 6, 2025" },
     ],
