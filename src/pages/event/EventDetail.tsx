@@ -43,7 +43,7 @@ const eventData = {
       bio: "Ms. Rajalakshmi is a leading voice in product innovation, women in tech, and youth mentorship. Her session will provide deep insights into building a long-term, impactful career in the tech-business intersection."
     },
     teamSize: "2–3 students",
-    entryFee: "Applicable only for teams advancing to Phase 2",
+    entryFee: "There is no entry fee, even for teams that advance",
     prizes: "Certificates and accolades for finalists"
   },
 
