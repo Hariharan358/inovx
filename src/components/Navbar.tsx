@@ -47,6 +47,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
+<<<<<<< HEAD
     { name: "Home", path: "/", icon: <Home className="h-4 w-4" /> },
     { name: "About", path: "/about", icon: <Info className="h-4 w-4" /> },
     { name: "Projects", path: "/projects", icon: <Code2 className="h-4 w-4" /> },
@@ -66,6 +67,23 @@ const Navbar = () => {
             InovX
           </span>
         </Link>
+=======
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+    { name: "Events", path: "/events" },
+    // { name: "Profile", path: "/profile" },
+    { name: "Register", path: "/event/crack-the-case" },
+  ];
+
+  return (
+    <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 shadow-lg rounded-full px-2 sm:px-4 md:px-6 py-2 flex items-center justify-between w-full sm:w-[95%] md:w-[90%] max-w-3xl backdrop-blur-md border border-gray-300 dark:border-gray-700 ${theme === "dark" ? "bg-black" : "bg-gray-200"}`}>
+      {/* Logo */}
+      <Link to="/" className="flex items-center space-x-1 md:space-x-2">
+        <img src="/slider/logo.jpg" alt="InovX Logo" className="h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 rounded-full object-cover" />
+        <span className="text-base sm:text-lg md:text-xl px-0.5 sm:px-1 md:px-2 font-bold">InovX</span>
+      </Link>
+>>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center space-x-8">
@@ -73,8 +91,10 @@ const Navbar = () => {
           <Link
             key={link.path}
             to={link.path}
-            className={`text-sm font-medium transition-colors duration-300 ${
-              location.pathname === link.path
+            className={`text-sm font-medium transition-all duration-300 ${
+              link.name === "Register"
+                ? "px-4 py-2 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full font-semibold hover:from-red-600 hover:to-pink-600 shadow-lg hover:shadow-xl transform hover:scale-105"
+                : location.pathname === link.path
                 ? "text-blue-600 dark:text-blue-400"
                 : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             }`}
@@ -95,6 +115,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button */}
+<<<<<<< HEAD
       <div className="md:hidden flex items-center space-x-1">
         <button
           onClick={toggleTheme}
@@ -104,16 +125,31 @@ const Navbar = () => {
             <Moon className="mobile-icon h-3 w-3 text-gray-700" />
           ) : (
             <Sun className="mobile-icon h-3 w-3 text-yellow-300" />
+=======
+      <div className="md:hidden flex items-center space-x-1 sm:space-x-2">
+        <button
+          onClick={toggleTheme}
+          className="p-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+        >
+          {theme === "light" ? (
+            <Moon className="h-4 w-4 text-gray-700" />
+          ) : (
+            <Sun className="h-4 w-4 text-yellow-400" />
+>>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
           )}
         </button>
         <button
           onClick={toggleMenu}
+<<<<<<< HEAD
           className={`mobile-button p-1 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-300 border ${
             isMenuOpen 
               ? "border-blue-500 dark:border-blue-400 bg-blue-50 dark:bg-blue-900/20" 
               : "border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
           } shadow-sm`}
           title={isMenuOpen ? "Close menu" : "Open menu"}
+=======
+          className="p-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+>>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
         >
           <AnimatePresence mode="wait">
             {isMenuOpen ? (
@@ -124,7 +160,11 @@ const Navbar = () => {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
+<<<<<<< HEAD
                 <X className="mobile-icon h-3 w-3 text-gray-700 dark:text-gray-300" />
+=======
+                <X className="h-4 w-4 text-gray-700 dark:text-gray-300" />
+>>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
               </motion.div>
             ) : (
               <motion.div
@@ -134,7 +174,11 @@ const Navbar = () => {
                 exit={{ rotate: -90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
+<<<<<<< HEAD
                 <Menu className="mobile-icon h-3 w-3 text-gray-700 dark:text-gray-300" />
+=======
+                <Menu className="h-4 w-4 text-gray-700 dark:text-gray-300" />
+>>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
               </motion.div>
             )}
           </AnimatePresence>
@@ -159,6 +203,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+<<<<<<< HEAD
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -217,6 +262,34 @@ const Navbar = () => {
       </AnimatePresence>
       </nav>
     </>
+=======
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 right-0 mt-2 py-1 px-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg md:hidden z-50"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`block py-1.5 px-2 text-xs font-medium transition-all duration-300 rounded ${
+                  link.name === "Register"
+                    ? "bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold shadow-lg"
+                    : location.pathname === link.path
+                    ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>  
+    </nav>
+>>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
   );
 };
 

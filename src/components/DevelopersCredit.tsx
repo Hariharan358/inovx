@@ -2,14 +2,15 @@ import { FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import gova from './Members/GOVA.jpg';
 import rakesh from './Members/rakesh.jpg';
-import hari from './Members/hari.jpg';
+import hari from './Members/harii.jpg';
 import santhosh from './Members/santhosh.jpg';
 import thejas from './Members/thejas.jpg';
+import { useEffect, useState } from 'react';
 
 interface Developer {
   name: string;
   linkedinUrl: string;
-  imageUrl?: string;
+  imageUrl?: string;  
 }
 
 const developers: Developer[] = [
@@ -40,8 +41,158 @@ const developers: Developer[] = [
   }
 ];
 
+<<<<<<< HEAD
+=======
+const Wrapper = styled.div<{ isDark: boolean }>`
+  background: ${props => props.isDark 
+    ? 'linear-gradient(120deg, #0f172a, #1e293b)' 
+    : 'linear-gradient(120deg, #f9fafc, #e2e8f0)'
+  };
+  padding: 4rem 1rem;
+  transition: background 0.3s ease;
+`;
+const LinkedIn = styled.a`
+  font-size: 0.95rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  display: inline-flex;  /* changed from inline-block to inline-flex */
+  align-items: center;   /* vertically center icon and text */
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #2563eb;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: #1d4ed8;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+`;
+
+const Title = styled.h2<{ isDark: boolean }>`
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: ${props => props.isDark ? '#f8fafc' : '#0f172a'};
+  margin-bottom: 3.5rem;
+  transition: color 0.3s ease;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Always 5 columns */
+  gap: 2rem; /* Moderate gap */
+  max-width: 1300px; /* Wider to fit larger cards */
+  margin: 0 auto;
+`;
+
+const Card = styled.div<{ isDark: boolean }>`
+  background: ${props => props.isDark 
+    ? 'rgba(30, 41, 59, 0.8)' 
+    : 'rgba(255, 255, 255, 0.15)'
+  };
+  border: 1px solid ${props => props.isDark 
+    ? 'rgba(148, 163, 184, 0.3)' 
+    : 'rgba(255, 255, 255, 0.3)'
+  };
+  backdrop-filter: blur(12px);
+  border-radius: 24px; /* Larger radius */
+  padding: 2.2rem 1.2rem; /* Larger padding */
+  text-align: center;
+  box-shadow: ${props => props.isDark 
+    ? '0 8px 30px rgba(0, 0, 0, 0.3)' 
+    : '0 8px 30px rgba(0, 0, 0, 0.05)'
+  };
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: ${props => props.isDark 
+      ? '0 12px 40px rgba(0, 0, 0, 0.4)' 
+      : '0 12px 40px rgba(0, 0, 0, 0.1)'
+    };
+  }
+
+  &:hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(59, 130, 246, 0.05));
+    pointer-events: none;
+    z-index: 1;
+  }
+`;
+
+const Avatar = styled.img`
+  width: 110px; /* Larger avatar */
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.2rem auto;
+  border: 4px solid #60a5fa;
+  transition: all 0.3s ease;
+
+  ${Card}:hover & {
+    border-color: #3b82f6;
+    box-shadow: 0 0 14px rgba(96, 165, 250, 0.5);
+  }
+`;
+
+const Name = styled.h3<{ isDark: boolean }>`
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: ${props => props.isDark ? '#f1f5f9' : '#1f2937'};
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+`;
+
+
+>>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
 const DevelopersCredit = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      setIsDark(isDarkMode);
+    };
+
+    checkTheme();
+    
+    // Listen for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
+<<<<<<< HEAD
     <div className="bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
@@ -98,6 +249,22 @@ const DevelopersCredit = () => {
         </div>
       </div>
     </div>
+=======
+    <Wrapper isDark={isDark}>
+      <Title isDark={isDark}>Developed By</Title>
+      <Grid>
+        {developers.map((dev, index) => (
+          <Card key={index} isDark={isDark} onClick={() => window.open(dev.linkedinUrl, '_blank')}>
+            {dev.imageUrl && <Avatar src={dev.imageUrl} alt={dev.name} />}
+            <Name isDark={isDark}>{dev.name}</Name>
+            <LinkedIn href={dev.linkedinUrl} target="_blank" rel="noopener noreferrer">
+              <FaLinkedin style={{ marginRight: '6px' }} />LinkedIn
+            </LinkedIn>
+          </Card>
+        ))}
+      </Grid>
+    </Wrapper>
+>>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
   );
 };
 

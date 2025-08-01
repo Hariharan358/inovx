@@ -79,11 +79,12 @@ const Hero = () => {
                     Let's collab <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <Link to="/members">
+                {/* <Link to="/members">
+
                   <Button size="lg" variant="outline" className="bg-club-blue hover:bg-club-purple/90">
                     Team
                   </Button>
-                </Link>
+                </Link> */}
               </motion.div>
             </motion.div>
 
