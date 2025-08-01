@@ -175,7 +175,14 @@ const EventDetail = () => {
           <strong>Entry fee:</strong> {event.entryFee}<br />
           <strong>Prizes:</strong> {event.prizes}
         </div>
-       <a href="https://forms.gle/EshASRSpyHivzLgN6"> <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition">Register</button></a>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a href="https://forms.gle/EshASRSpyHivzLgN6">
+            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition">Register</button>
+          </a>
+          <a href="https://forms.gle/EbZkHzpVRfi6BX2F8">
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-semibold hover:from-green-700 hover:to-teal-700 transition">Submit Here Your Idea</button>
+          </a>
+        </div>
       </div>
     </div>
   );
