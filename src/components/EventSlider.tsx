@@ -44,7 +44,7 @@ const EventSlider: React.FC<EventSliderProps> = ({ events }) => {
               className="mt-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition"
               onClick={() => navigate(`/event/${event.id}`)}
             >
-              Register Now!
+              View Details
             </button>
           </div>
         ))}

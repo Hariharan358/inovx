@@ -10,6 +10,15 @@ import DevelopersCredit from "@/components/DevelopersCredit";
 import EventSlider from "@/components/EventSlider";
 import banner from "../components/Members/banner.jpg"
 
+const sliderImages = [
+  "/slider/image1.jpg",
+  "/slider/image2.jpg",
+  "/slider/image3.jpg",
+  "/slider/image4.jpg",
+  "/slider/image5.jpg",
+  "/slider/image6.jpg",
+];
+
 const events = [
   {
     id: "crack-the-case",

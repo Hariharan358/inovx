@@ -76,11 +76,7 @@ const AboutSection: React.FC = () => {
               <p className="text-gray-600 dark:text-gray-300 mb-4 md:mb-6">
                 To foster innovation and entrepreneurship by providing students with the technical skills, business knowledge, and networking opportunities needed to succeed in today's competitive tech industry.
               </p>
-<<<<<<< HEAD
               <div className="code-block bg-gray-100 dark:bg-gray-800 text-black dark:text-green-300 p-4 md:p-6 rounded-lg font-mono text-xs md:text-sm overflow-auto border border-gray-300 dark:border-gray-600">
-=======
-              <div className="code-block bg-gray-900 dark:bg-black text-black dark:text-green-400 p-4 md:p-6 rounded-lg font-mono text-xs md:text-sm overflow-auto border border-gray-700 dark:border-gray-600">
->>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
                 <pre>
                 <code>
   function createInnovation() {'{'}
@@ -128,11 +124,7 @@ const AboutSection: React.FC = () => {
                   stiffness: 100,
                   damping: 25,
                 }}
-<<<<<<< HEAD
-                className="card bg-gray-100 dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-300 dark:border-gray-600 text-center"
-=======
-                className="card bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-300 dark:border-gray-600 text-center hover:shadow-lg dark:hover:shadow-gray-900/50 transition-all duration-300"
->>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
+                className="card bg-gray-100 dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-300 dark:border-gray-600 text-center hover:shadow-lg dark:hover:shadow-gray-900/50 transition-all duration-300"
               >
                 <div className="h-12 w-12 mx-auto rounded-lg bg-club-purple/10 dark:bg-club-purple/20 flex items-center justify-center mb-4">
                   {feature.icon}
@@ -202,11 +194,7 @@ const AboutSection: React.FC = () => {
         }
 
         .dark .card__content {
-<<<<<<< HEAD
           color: #e5e7eb;
-=======
-          color: #f3f4f6;
->>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
         }
 
         .card__form {
@@ -227,12 +215,7 @@ const AboutSection: React.FC = () => {
         .dark .card__form input {
           border: 3px solid #4b5563;
           background: #374151;
-<<<<<<< HEAD
           color: #e5e7eb;
-        }
-=======
-          color: #f3f4f6;
->>>>>>> 637bb9f4c16af57aa90d53752d6135bd6032a8ed
         }
 
         .card__form input:focus {
