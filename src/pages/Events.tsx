@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
-import EventsSection from "@/components/EventsSection";
+// import EventsSection from "@/components/EventsSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { theme } from "@/lib/theme";
 import ImageSlider from "@/components/ImageSlider";
-import EventTimeline from "@/components/EventTimeline";
+// import EventTimeline from "@/components/EventTimeline";
 import { Calendar, Clock, Users } from "lucide-react";
 import { useInView } from 'react-intersection-observer';
 import crack from "../components/Members/crack.jpg"
@@ -236,8 +236,8 @@ const Events = () => {
           </motion.div>
         </div>
       </motion.div>
-      <EventTimeline/>
-      <EventsSection />
+      {/* <EventTimeline/> */}
+      {/* <EventsSection /> */}
       
       <Footer />
     </motion.div>
