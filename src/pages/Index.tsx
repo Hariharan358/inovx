@@ -21,6 +21,15 @@ const sliderImages = [
 
 const events = [
   {
+    id: "agentic-ai",
+    title: "AGENTIC AI",
+    image: "/events/ai.jpg",
+    date: "15th October 2025",
+    venue: "Main Seminar Hall",
+    shortDescription:
+      "Transforming today, shaping tomorrow, innovating for a brighter future. Join us for an exciting exploration of Agentic AI technologies and their impact on the future of innovation.",
+  },
+  {
     id: "crack-the-case",
     title: "Crack the Case",
     image: banner,
@@ -53,6 +62,133 @@ const Index = () => {
       >
         <Hero />
       </motion.div>
+
+      {/* AGENTIC AI Poster Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+                Upcoming Event
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Don't miss our exciting AGENTIC AI event - Innovation for the future
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex justify-center"
+          >
+            <div className="relative group max-w-5xl w-full">
+              {/* Glow effect */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Poster container - Wide rectangle like presentation screen */}
+              <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                {/* Live badge */}
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="px-3 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg animate-pulse">
+                    LIVE
+                  </span>
+                </div>
+                
+                {/* Poster image - 16:9 aspect ratio */}
+                <div className="w-full aspect-video">
+                  <img 
+                    src="/events/ai.jpg" 
+                    alt="AGENTIC AI Event Poster" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Overlay with event details */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="text-xl md:text-2xl font-bold mb-1">AGENTIC AI</h3>
+                    <p className="text-sm mb-1">October 15, 2025</p>
+                    <p className="text-xs opacity-90">Main Seminar Hall</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Register Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="flex justify-center mt-8"
+          >
+           
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 text-white font-semibold rounded-xl shadow-lg hover:from-blue-700  transition-all duration-300 hover:shadow-xl"
+            >
+              <a href="https://forms.gle/NafpoKpMwnBfLtw8A"> Register Now </a>
+            </motion.button>
+          </motion.div>
+
+          {/* Event details card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="mt-12 max-w-4xl mx-auto"
+          >
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Date</h4>
+                  <p className="text-gray-600 dark:text-gray-300">October 15, 2025</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Venue</h4>
+                  <p className="text-gray-600 dark:text-gray-300">stay Tuned!</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Status</h4>
+                  <p className="text-red-500 font-semibold">Live Event</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

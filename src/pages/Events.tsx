@@ -1,17 +1,31 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
-// import EventsSection from "@/components/EventsSection";
+import EventsSection from "@/components/EventsSection";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { theme } from "@/lib/theme";
 import ImageSlider from "@/components/ImageSlider";
-// import EventTimeline from "@/components/EventTimeline";
+import EventTimeline from "@/components/EventTimeline";
 import { Calendar, Clock, Users } from "lucide-react";
 import { useInView } from 'react-intersection-observer';
 import crack from "../components/Members/crack.jpg"
 import webinar from "../components/eventimg/webinar_bargay.png"
 import placement from "../components/eventimg/placemnt.jpg"
 import student from "../components/eventimg/buvi.jpg"
+import { getEvents, Event as ServiceEvent } from "@/services/eventService";
+import { useEffect, useState } from "react";
+
+// Unified event type for the timeline
+interface TimelineEvent {
+  id: string;
+  title: string;
+  date: string;
+  venue: string;
+  description: string;
+  link: string;
+  type: "upcoming" | "live" | "past";
+  image: string;
+}
 
 // Event images from the public directory
 const eventImages = [
@@ -24,7 +38,18 @@ const eventImages = [
   
 ];
 
-const timelineEvents = [
+// Legacy events for backward compatibility
+const legacyEvents: TimelineEvent[] = [
+  {
+    id: "agentic-ai",
+    title: "AGENTIC AI",
+    date: "15th October 2025",
+    venue: "Stay Tuned!",
+    description: "Transforming today, shaping tomorrow, innovating for a brighter future. Join us for an exciting exploration of Agentic AI technologies and their impact on the future of innovation.",
+    link: "/event/agentic-ai",
+    type: "live",
+    image: "/events/ai.jpg",
+  },
   {
     id: "crack-the-case",
     title: "Crack the Case",
@@ -85,10 +110,47 @@ const timelineEvents = [
     type: "past",
     image: "/slider/image6.jpg",
   },
-  // Add more past events here as needed
 ];
 
 const Events = () => {
+  const [timelineEvents, setTimelineEvents] = useState<TimelineEvent[]>(legacyEvents);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        // Get events from API and combine with legacy events
+        const serviceEvents = await getEvents();
+        
+        // Convert service events to timeline format
+        const convertedServiceEvents: TimelineEvent[] = serviceEvents.map(event => ({
+          id: event._id,
+          title: event.title,
+          date: event.date,
+          venue: event.venue,
+          description: event.description,
+          link: event.link || `/event/${event._id}`,
+          type: event.type,
+          image: event.image,
+        }));
+        
+        const combinedEvents = [...convertedServiceEvents, ...legacyEvents];
+        
+        // Remove duplicates based on title
+        const uniqueEvents = combinedEvents.filter((event, index, self) => 
+          index === self.findIndex(e => e.title === event.title)
+        );
+        
+        setTimelineEvents(uniqueEvents);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+        // Fallback to legacy events if API fails
+        setTimelineEvents(legacyEvents);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -171,12 +233,17 @@ const Events = () => {
                            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"></div>
                           {/* Image Container */}
                           <div className="relative">
-                            <img src={event.image} alt={event.title} className="w-full h-48 md:h-56 lg:h-64 object-cover" />
+                            <img src={event.image} alt={event.title} className="w-full h-60 md:h-58 lg:h-64 object-cover" />
                                                          {/* Badge Overlay */}
                              <div className="absolute top-4 right-4 flex flex-col space-y-2">
                                {isUpcoming && (
                                  <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg">
                                    Upcoming
+                                 </span>
+                               )}
+                               {event.type === 'live' && (
+                                 <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg animate-pulse">
+                                   Live
                                  </span>
                                )}
                              </div>
@@ -236,8 +303,8 @@ const Events = () => {
           </motion.div>
         </div>
       </motion.div>
-      {/* <EventTimeline/> */}
-      {/* <EventsSection /> */}
+      <EventTimeline/>
+      <EventsSection />
       
       <Footer />
     </motion.div>
