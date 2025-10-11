@@ -10,7 +10,7 @@ const eventData = {
     title: "AGENTIC AI",
     image: "/events/ai.jpg",
     date: "October 15, 2025",
-    time: "9:00 AM - 5:00 PM",
+    time: "9:00 AM - 3:00 PM",
     venue: "Main Seminar Hall",
     status: "Live Event",
     about: `Join us for a groundbreaking exploration of Agentic AI technologies that are reshaping the future of innovation. This comprehensive event features expert talks, hands-on workshops, and live demonstrations of cutting-edge AI systems. Discover how autonomous AI agents are transforming industries, from healthcare to finance, and learn practical skills to implement these technologies in your own projects.`,
