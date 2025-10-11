@@ -1,8 +1,68 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Calendar, Clock, MapPin, Users, Award, Rocket, Sparkles, Star, ExternalLink } from "lucide-react";
 import banner from "../../components/Members/banner.jpg"
 import crack from "../event/images/WhatsApp Image 2025-08-13 at 18.11.54_f40cb6f3.jpg"
+
 const eventData = {
+  "agentic-ai": {
+    title: "AGENTIC AI",
+    image: "/events/ai.jpg",
+    date: "October 15, 2025",
+    time: "9:00 AM - 5:00 PM",
+    venue: "Main Seminar Hall",
+    status: "Live Event",
+    about: `Join us for a groundbreaking exploration of Agentic AI technologies that are reshaping the future of innovation. This comprehensive event features expert talks, hands-on workshops, and live demonstrations of cutting-edge AI systems. Discover how autonomous AI agents are transforming industries, from healthcare to finance, and learn practical skills to implement these technologies in your own projects.`,
+    description: `AGENTIC AI represents the next frontier in artificial intelligence - systems that can think, plan, and act autonomously to achieve complex goals. This full-day event brings together industry leaders, researchers, and students to explore the revolutionary potential of agentic AI systems.
+
+Our event features a comprehensive program designed to provide both theoretical knowledge and practical experience. From keynote presentations by leading AI researchers to hands-on workshops where you'll build your own AI agents, this event offers something for everyone interested in the future of technology.
+
+Whether you're a seasoned developer, a curious student, or an industry professional looking to stay ahead of the curve, AGENTIC AI will provide you with the insights, skills, and connections you need to thrive in the AI-powered future.`,
+    highlights: [
+      {
+        icon: <Rocket className="h-6 w-6" />,
+        title: "Expert Keynote Sessions",
+        description: "Learn from leading AI researchers and industry experts about the latest developments in agentic AI"
+      },
+      {
+        icon: <Award className="h-6 w-6" />,
+        title: "Hands-on Workshops",
+        description: "Build your own AI agents using cutting-edge frameworks and tools"
+      },
+      {
+        icon: <Sparkles className="h-6 w-6" />,
+        title: "Live Demonstrations",
+        description: "See agentic AI systems in action with real-world applications and use cases"
+      },
+      {
+        icon: <Users className="h-6 w-6" />,
+        title: "Industry Networking",
+        description: "Connect with professionals, researchers, and fellow AI enthusiasts"
+      }
+    ],
+    schedule: [
+      { time: "9:00 AM - 9:30 AM", event: "Registration & Welcome" },
+      { time: "9:30 AM - 10:30 AM", event: "Keynote: The Future of Agentic AI" },
+      { time: "10:30 AM - 11:00 AM", event: "Coffee Break & Networking" },
+      { time: "11:00 AM - 12:30 PM", event: "Workshop: Building Your First AI Agent" },
+      { time: "12:30 PM - 1:30 PM", event: "Lunch Break" },
+      { time: "1:30 PM - 3:00 PM", event: "Panel Discussion: AI Ethics & Governance" },
+      { time: "3:00 PM - 3:30 PM", event: "Coffee Break" },
+      { time: "3:30 PM - 4:30 PM", event: "Live Demo: Advanced AI Systems" },
+      { time: "4:30 PM - 5:00 PM", event: "Q&A & Closing Remarks" }
+    ],
+    speakers: [
+      {
+        name: "Mr.Sriram Ramakrishnan",
+        title: "Technical Product Manager at Space Kidz India",
+        bio: "AI Expert Specialized in Data Science | QISE Enthusiast specialized in Physics",
+        image: "/ai-guest.png"
+      },
+      
+    ],
+    registrationLink: "https://forms.gle/NafpoKpMwnBfLtw8A"
+  },
   "crack-the-case": {
     title: "Crack the Case",
     image: banner,
@@ -26,9 +86,208 @@ const EventDetail = () => {
     return <div className="text-center py-20">Event not found.</div>;
   }
 
+  // Special layout for AGENTIC AI event
+  if (id === "agentic-ai" && 'status' in event) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 transition-colors relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto py-12 px-4 relative z-10">
+          {/* Back Button */}
+          <motion.button 
+            className="mb-8 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium flex items-center gap-2"
+            onClick={() => navigate(-1)}
+            whileHover={{ x: -5 }}
+            transition={{ duration: 0.2 }}
+          >
+            <span>←</span> Back to Events
+          </motion.button>
+
+          {/* Hero Section */}
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 text-sm font-semibold mb-6 animate-pulse">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              {event.status}
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              {event.title}
+            </h1>
+            
+            <div className="flex flex-wrap justify-center items-center gap-6 text-lg text-gray-600 dark:text-gray-300 mb-8">
+              <div className="flex items-center gap-2">
+                <Calendar className="h-5 w-5 text-blue-500" />
+                <span>{event.date}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-5 w-5 text-green-500" />
+                <span>{event.time}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-5 w-5 text-red-500" />
+                <span>{event.venue}</span>
+              </div>
+            </div>
+
+            <p className="text-xl text-gray-700 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8">
+              {event.about}
+            </p>
+
+            {/* Register Button */}
+            <motion.a
+              href={event.registrationLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 hover:from-red-700 hover:via-pink-700 hover:to-purple-700 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ExternalLink className="h-5 w-5" />
+              Register Now
+            </motion.a>
+          </motion.div>
+
+          {/* Event Image */}
+          <motion.div 
+            className="mb-16"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <img 
+                src={event.image} 
+                alt="AGENTIC AI Event Poster" 
+                className="relative w-full max-w-5xl mx-auto h-64 md:h-80 lg:h-96 object-cover rounded-2xl shadow-2xl"
+              />
+            </div>
+          </motion.div>
+
+          {/* Event Description */}
+          <motion.div 
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">About the Event</h2>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+              <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line">
+                {event.description}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Event Highlights */}
+          <motion.div 
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">Event Highlights</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {event.highlights.map((highlight, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl">
+                      {highlight.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{highlight.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-300">{highlight.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Schedule */}
+         
+           
+         
+
+          {/* Speakers */}
+          <motion.div 
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">Featured Speakers</h2>
+            <div className="grid grid-cols-1 center mx-9 px-8  gap-8">
+              {event.speakers.map((speaker, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg text-center"
+                  whileHover={{ y: -5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.1 + index * 0.1 }}
+                >
+                  <img 
+                    src={speaker.image} 
+                    alt={speaker.name}
+                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-200"
+                  />
+                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{speaker.name}</h3>
+                  <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">{speaker.title}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{speaker.bio}</p>
+                  <a href="https://www.linkedin.com/in/sriram-aiexpert/"><button className="bg-blue-400 text-white px-3 py-1 rounded-md">Linkedin</button></a>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Final CTA */}
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+              <h2 className="text-3xl font-bold mb-4">Ready to Join the AI Revolution?</h2>
+              <p className="text-xl mb-6 opacity-90">Don't miss this opportunity to be part of the future of artificial intelligence.</p>
+              <motion.a
+                href={event.registrationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ExternalLink className="h-5 w-5" />
+                Register Now - Limited Seats Available
+              </motion.a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    );
+  }
+
+  // Default layout for other events
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors relative overflow-hidden">
-      
       <div className="max-w-4xl mx-auto py-12 px-4 relative z-10">
         <button className="mb-6 text-blue-600 hover:underline" onClick={() => navigate(-1)}>&larr; Back</button>
         
@@ -49,19 +308,21 @@ const EventDetail = () => {
         </div>
 
         {/* Chief Guest Section */}
-        <div className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl shadow-md flex flex-col md:flex-row items-center md:items-start gap-6">
-          <img 
-            src="/woman-portrait.png" 
-            alt="Chief Guest portrait" 
-            className="w-32 h-32 md:w-40 mr-3 p-1 md:h-40 object-cover rounded-full border-4 border-blue-200 shadow-md mb-4 md:mb-0" 
-          />
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold mb-2 text-blue-800 dark:text-blue-300">Chief Guest</h2>
-            <div className="text-xl font-semibold mb-1">{event.chiefGuest.name}</div>
-            <div className="text-gray-700 dark:text-gray-200 mb-2">{event.chiefGuest.title}</div>
-            <div className="text-gray-700 dark:text-gray-200">{event.chiefGuest.bio}</div>
+        {'chiefGuest' in event && (
+          <div className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl shadow-md flex flex-col md:flex-row items-center md:items-start gap-6">
+            <img 
+              src="/woman-portrait.png" 
+              alt="Chief Guest portrait" 
+              className="w-32 h-32 md:w-40 mr-3 p-1 md:h-40 object-cover rounded-full border-4 border-blue-200 shadow-md mb-4 md:mb-0" 
+            />
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold mb-2 text-blue-800 dark:text-blue-300">Chief Guest</h2>
+              <div className="text-xl font-semibold mb-1">{event.chiefGuest.name}</div>
+              <div className="text-gray-700 dark:text-gray-200 mb-2">{event.chiefGuest.title}</div>
+              <div className="text-gray-700 dark:text-gray-200">{event.chiefGuest.bio}</div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

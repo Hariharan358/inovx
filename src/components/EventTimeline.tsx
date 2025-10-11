@@ -19,15 +19,33 @@ interface TimelineEvent {
 const timelineEvents: TimelineEvent[] = [
   {
     id: 1,
+    title: "AGENTIC AI",
+    date: "October 15, 2025",
+    time: "9:00 AM - 5:00 PM",
+    location: "Main Seminar Hall",
+    description: "Join us for a groundbreaking exploration of Agentic AI technologies that are reshaping the future of innovation. This comprehensive event features expert talks, hands-on workshops, and live demonstrations of cutting-edge AI systems. Discover how autonomous AI agents are transforming industries, from healthcare to finance, and learn practical skills to implement these technologies in your own projects. Network with industry leaders, participate in interactive sessions, and be part of the AI revolution that's defining tomorrow's digital landscape.",
+    status: 'ongoing',
+    icon: <Rocket className="h-5 w-5" />,
+    color: "from-blue-500 to-purple-600",
+    gradient: "from-blue-400 via-purple-500 to-pink-500",
+    images: [
+      "/events/ai.jpg",
+      "/slider/image1.jpg",
+      "/slider/image2.jpg",
+      "/slider/image3.jpg"
+    ]
+  },
+  {
+    id: 2,
     title: "Club Inauguration",
     date: "April 3, 2025",
     time: "10:00 AM",
     location: "Main Seminar Hall",
     description: "Grand opening ceremony with special guests Dhana Prabu Sekar and A2D Nandhakumar. Experience the beginning of innovation and entrepreneurship journey.",
     status: 'upcoming',
-    icon: <Rocket className="h-5 w-5" />,
-    color: "from-blue-500 to-purple-600",
-    gradient: "from-blue-400 via-purple-500 to-pink-500",
+    icon: <Award className="h-5 w-5" />,
+    color: "from-green-500 to-teal-600",
+    gradient: "from-green-400 via-teal-500 to-cyan-500",
     images: [
       "/slider/image1.jpg",
       "/slider/image2.jpg",
@@ -36,7 +54,7 @@ const timelineEvents: TimelineEvent[] = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Technical Workshop",
     date: "April 10, 2025",
     time: "2:00 PM",
@@ -54,7 +72,7 @@ const timelineEvents: TimelineEvent[] = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     title: "Business Pitch Competition",
     date: "April 17, 2025",
     time: "3:30 PM",
@@ -72,7 +90,7 @@ const timelineEvents: TimelineEvent[] = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     title: "Networking Event",
     date: "April 24, 2025",
     time: "6:00 PM",
@@ -378,22 +396,43 @@ const EventTimeline = () => {
                       </p>
 
                       {/* Enhanced Action Button */}
-                      <motion.button 
-                        className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        onClick={() => openEventModal(event)}
-                      >
-                        <span className="flex items-center justify-center gap-2">
-                          Learn More
-                          <motion.div
-                            animate={{ x: [0, 5, 0] }}
-                            transition={{ duration: 1.5, repeat: Infinity }}
-                          >
-                            →
-                          </motion.div>
-                        </span>
-                      </motion.button>
+                      {event.id === 1 ? (
+                        <motion.a
+                          href="https://forms.gle/NafpoKpMwnBfLtw8A"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 hover:from-red-700 hover:via-pink-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl block text-center"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <span className="flex items-center justify-center gap-2">
+                            Register Now
+                            <motion.div
+                              animate={{ x: [0, 5, 0] }}
+                              transition={{ duration: 1.5, repeat: Infinity }}
+                            >
+                              →
+                            </motion.div>
+                          </span>
+                        </motion.a>
+                      ) : (
+                        <motion.button 
+                          className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          onClick={() => openEventModal(event)}
+                        >
+                          <span className="flex items-center justify-center gap-2">
+                            Learn More
+                            <motion.div
+                              animate={{ x: [0, 5, 0] }}
+                              transition={{ duration: 1.5, repeat: Infinity }}
+                            >
+                              →
+                            </motion.div>
+                          </span>
+                        </motion.button>
+                      )}
                     </div>
                   </motion.div>
                 </div>
@@ -542,6 +581,81 @@ const EventTimeline = () => {
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   {selectedEvent.description}
                 </p>
+
+                {/* Special AGENTIC AI Event Details */}
+                {selectedEvent.id === 1 && (
+                  <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-700">
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                      Event Highlights
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+                            <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">1</span>
+                          </div>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">Expert Keynote Sessions</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
+                            <span className="text-purple-600 dark:text-purple-400 font-bold text-sm">2</span>
+                          </div>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">Hands-on AI Workshops</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-pink-100 dark:bg-pink-900/30 rounded-full flex items-center justify-center">
+                            <span className="text-pink-600 dark:text-pink-400 font-bold text-sm">3</span>
+                          </div>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">Live AI Demonstrations</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
+                            <span className="text-green-600 dark:text-green-400 font-bold text-sm">4</span>
+                          </div>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">Industry Networking</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center">
+                            <span className="text-orange-600 dark:text-orange-400 font-bold text-sm">5</span>
+                          </div>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">AI Project Showcase</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center">
+                            <span className="text-red-600 dark:text-red-400 font-bold text-sm">6</span>
+                          </div>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">Career Opportunities</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Register Button for AGENTIC AI */}
+                    <motion.a
+                      href="https://forms.gle/NafpoKpMwnBfLtw8A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 hover:from-red-700 hover:via-pink-700 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl block text-center"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span className="flex items-center justify-center gap-3">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                        Register for AGENTIC AI Event
+                        <motion.div
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          →
+                        </motion.div>
+                      </span>
+                    </motion.a>
+                  </div>
+                )}
 
                                  {/* Image Thumbnails */}
                  <div className="flex gap-2 mt-6 overflow-x-auto">
