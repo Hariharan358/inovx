@@ -35,20 +35,20 @@ const eventImages = [
   "/slider/image4.jpg",
   "/slider/image5.jpg",
   "/slider/image6.jpg",
-  
+
 ];
 
 // Legacy events for backward compatibility
 const legacyEvents: TimelineEvent[] = [
   {
-    id: "agentic-ai",
-    title: "AGENTIC AI",
-    date: "15th October 2025",
-    venue: "Stay Tuned!",
-    description: "Transforming today, shaping tomorrow, innovating for a brighter future. Join us for an exciting exploration of Agentic AI technologies and their impact on the future of innovation.",
-    link: "/event/agentic-ai",
+    id: "titanium-26",
+    title: "Titanium '26 Techception",
+    date: "12 February 2026",
+    venue: "A-NEW 103",
+    description: "Your Hidden Treasures Await. Join us for Techception, presented by INOVX.",
+    link: "/event/titanium-26",
     type: "live",
-    image: "/events/ai.jpg",
+    image: "/events/titanium.jpg",
   },
   {
     id: "crack-the-case",
@@ -120,7 +120,7 @@ const Events = () => {
       try {
         // Get events from API and combine with legacy events
         const serviceEvents = await getEvents();
-        
+
         // Convert service events to timeline format
         const convertedServiceEvents: TimelineEvent[] = serviceEvents.map(event => ({
           id: event._id,
@@ -132,14 +132,14 @@ const Events = () => {
           type: event.type,
           image: event.image,
         }));
-        
+
         const combinedEvents = [...convertedServiceEvents, ...legacyEvents];
-        
+
         // Remove duplicates based on title
-        const uniqueEvents = combinedEvents.filter((event, index, self) => 
+        const uniqueEvents = combinedEvents.filter((event, index, self) =>
           index === self.findIndex(e => e.title === event.title)
         );
-        
+
         setTimelineEvents(uniqueEvents);
       } catch (error) {
         console.error('Error fetching events:', error);
@@ -152,22 +152,22 @@ const Events = () => {
   }, []);
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className="mobile-safe min-h-screen bg-white dark:bg-black transition-colors"
     >
       <Navbar />
-      
-      <motion.div 
+
+      <motion.div
         className="pt-16 md:pt-20 pb-12 md:pb-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <div className="mobile-container mx-auto">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -175,8 +175,8 @@ const Events = () => {
           >
             Our Events
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-3xl mx-auto text-lg md:text-xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -184,7 +184,7 @@ const Events = () => {
           >
             Discover our upcoming and past events, workshops, and meetups designed to foster innovation and learning.
           </motion.p>
-          
+
           {/* Enhanced Timeline */}
           <div className="relative mx-auto max-w-7xl py-16">
             {/* --- Decorative Background Elements --- */}
@@ -213,42 +213,42 @@ const Events = () => {
                 const isLeft = idx % 2 === 0;
                 return (
                   <div key={event.id} className="relative">
-                    
-                    
-                                         {/* Event Card Container */}
-                     <div className={`flex ${isLeft ? 'justify-start' : 'justify-end'} justify-center`}>
-                       <motion.div
-                         ref={ref}
-                         initial={{ opacity: 0, x: isLeft ? -60 : 60, y: 60 }}
-                         animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
-                         transition={{ duration: 0.8, delay: idx * 0.15, type: 'spring', stiffness: 50 }}
-                         className={`w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl ${isLeft ? 'mr-auto pr-8 lg:pr-48' : 'ml-auto pl-8 lg:pl-48'} mx-auto lg:mx-0`}
-                       >
-                                                 <motion.div 
-                           animate={{ y: [0, -5, 0] }}
-                           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                           className="bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 hover:scale-105 relative group"
-                         >
-                           {/* Glow Effect */}
-                           <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"></div>
+
+
+                    {/* Event Card Container */}
+                    <div className={`flex ${isLeft ? 'justify-start' : 'justify-end'} justify-center`}>
+                      <motion.div
+                        ref={ref}
+                        initial={{ opacity: 0, x: isLeft ? -60 : 60, y: 60 }}
+                        animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+                        transition={{ duration: 0.8, delay: idx * 0.15, type: 'spring', stiffness: 50 }}
+                        className={`w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl ${isLeft ? 'mr-auto pr-8 lg:pr-48' : 'ml-auto pl-8 lg:pl-48'} mx-auto lg:mx-0`}
+                      >
+                        <motion.div
+                          animate={{ y: [0, -5, 0] }}
+                          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                          className="bg-white dark:bg-gray-900 border border-blue-200 dark:border-blue-800 rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 hover:scale-105 relative group"
+                        >
+                          {/* Glow Effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"></div>
                           {/* Image Container */}
                           <div className="relative">
                             <img src={event.image} alt={event.title} className="w-full h-60 md:h-58 lg:h-64 object-cover" />
-                                                         {/* Badge Overlay */}
-                             <div className="absolute top-4 right-4 flex flex-col space-y-2">
-                               {isUpcoming && (
-                                 <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg">
-                                   Upcoming
-                                 </span>
-                               )}
-                               {event.type === 'live' && (
-                                 <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg animate-pulse">
-                                   Live
-                                 </span>
-                               )}
-                             </div>
+                            {/* Badge Overlay */}
+                            <div className="absolute top-4 right-4 flex flex-col space-y-2">
+                              {isUpcoming && (
+                                <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg">
+                                  Upcoming
+                                </span>
+                              )}
+                              {event.type === 'live' && (
+                                <span className="px-4 py-2 text-sm font-bold rounded-full bg-gradient-to-r from-red-500 to-pink-500 text-white shadow-lg animate-pulse">
+                                  Live
+                                </span>
+                              )}
+                            </div>
                           </div>
-                          
+
                           {/* Content */}
                           <div className="px-6 md:px-8 py-6 md:py-8">
                             <div className="mb-4">
@@ -261,14 +261,14 @@ const Events = () => {
                                 <span>{event.venue}</span>
                               </div>
                             </div>
-                            
+
                             <p className="text-sm md:text-base text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">
                               {event.description}
                             </p>
-                            
+
                             {event.link && (
-                              <a 
-                                href={event.link} 
+                              <a
+                                href={event.link}
                                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg"
                               >
                                 Learn More
@@ -281,8 +281,8 @@ const Events = () => {
                         </motion.div>
                       </motion.div>
                     </div>
-                    
-                    
+
+
                   </div>
                 );
               })}
@@ -303,9 +303,9 @@ const Events = () => {
           </motion.div>
         </div>
       </motion.div>
-      <EventTimeline/>
+      <EventTimeline />
       <EventsSection />
-      
+
       <Footer />
     </motion.div>
   );

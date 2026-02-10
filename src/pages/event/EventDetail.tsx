@@ -6,62 +6,51 @@ import banner from "../../components/Members/banner.jpg"
 import crack from "../event/images/WhatsApp Image 2025-08-13 at 18.11.54_f40cb6f3.jpg"
 
 const eventData = {
-  "agentic-ai": {
-    title: "AGENTIC AI",
-    image: "/events/ai.jpg",
-    date: "October 15, 2025",
-    time: "9:00 AM - 3:00 PM",
-    venue: "Main Seminar Hall",
+  "titanium-26": {
+    title: "Titanium '26 Techception",
+    image: "/events/titanium.jpg",
+    date: "12 February 2026",
+    time: "9:00 AM Onwards",
+    venue: "A-NEW 103",
     status: "Live Event",
-    about: `Join us for a groundbreaking exploration of Agentic AI technologies that are reshaping the future of innovation. This comprehensive event features expert talks, hands-on workshops, and live demonstrations of cutting-edge AI systems. Discover how autonomous AI agents are transforming industries, from healthcare to finance, and learn practical skills to implement these technologies in your own projects.`,
-    description: `AGENTIC AI represents the next frontier in artificial intelligence - systems that can think, plan, and act autonomously to achieve complex goals. This full-day event brings together industry leaders, researchers, and students to explore the revolutionary potential of agentic AI systems.
-
-Our event features a comprehensive program designed to provide both theoretical knowledge and practical experience. From keynote presentations by leading AI researchers to hands-on workshops where you'll build your own AI agents, this event offers something for everyone interested in the future of technology.
-
-Whether you're a seasoned developer, a curious student, or an industry professional looking to stay ahead of the curve, AGENTIC AI will provide you with the insights, skills, and connections you need to thrive in the AI-powered future.`,
+    about: "Sprint style technical treasure hunt for problem solvers. Teams progress through a series of rounds by decoding clues, solving logic and coding challenges, where each correct interpretation unlocks the next stage. With limited hints, participants uncover a hidden theme and product idea, and finally transforms their insights into a product concept with workflow, UI design, and a short pitch.",
+    description: "All that you need to know about Techception -Titanium\n\nSprint style technical treasure hunt for problem solvers. Teams progress through a series of rounds by decoding clues, solving logic and coding challenges, each correct interpretation unlocks the next stage.\n\nPayment:\nMake Payment of Rs 200/ per team through the Titanium official site.",
     highlights: [
       {
         icon: <Rocket className="h-6 w-6" />,
-        title: "Expert Keynote Sessions",
-        description: "Learn from leading AI researchers and industry experts about the latest developments in agentic AI"
+        title: "The Tech Sprint",
+        description: "Round 1: A mix of dumb charades and reasoning to reveal a hidden tech concept."
       },
       {
         icon: <Award className="h-6 w-6" />,
-        title: "Hands-on Workshops",
-        description: "Build your own AI agents using cutting-edge frameworks and tools"
-      },
-      {
-        icon: <Sparkles className="h-6 w-6" />,
-        title: "Live Demonstrations",
-        description: "See agentic AI systems in action with real-world applications and use cases"
+        title: "The Decode Battle",
+        description: "Round 2: Solve shuffled tasks to get clues about the logic of the product."
       },
       {
         icon: <Users className="h-6 w-6" />,
-        title: "Industry Networking",
-        description: "Connect with professionals, researchers, and fellow AI enthusiasts"
+        title: "The Tech Fix",
+        description: "Round 3: Convert your solution into a basic product idea and pitch it."
       }
     ],
     schedule: [
-      { time: "9:00 AM - 9:30 AM", event: "Registration & Welcome" },
-      { time: "9:30 AM - 10:30 AM", event: "Keynote: The Future of Agentic AI" },
-      { time: "10:30 AM - 11:00 AM", event: "Coffee Break & Networking" },
-      { time: "11:00 AM - 12:30 PM", event: "Workshop: Building Your First AI Agent" },
-      { time: "12:30 PM - 1:30 PM", event: "Lunch Break" },
-      { time: "1:30 PM - 3:00 PM", event: "Panel Discussion: AI Ethics & Governance" },
-      { time: "3:00 PM - 3:30 PM", event: "Coffee Break" },
-      { time: "3:30 PM - 4:30 PM", event: "Live Demo: Advanced AI Systems" },
-      { time: "4:30 PM - 5:00 PM", event: "Q&A & Closing Remarks" }
-    ],
-    speakers: [
       {
-        name: "Mr.Sriram Ramakrishnan",
-        title: "Technical Product Manager at Space Kidz India",
-        bio: "AI Expert Specialized in Data Science | QISE Enthusiast specialized in Physics",
-        image: "/ai-guest.png"
+        time: "09:00 AM - 09:20 AM",
+        event: "Round 1: The Tech Sprint (IDEA)",
+        description: "A mix of dumb charades and reasoning! Each member receives a clue about a hidden tech concept. All clues together reveal one product or theme. The first team to crack it gets to choose their theme for the next round."
       },
-      
+      {
+        time: "09:30 AM - 10:20 AM",
+        event: "Round 2: The Decode Battle (LOGIC)",
+        description: "Solve a set of four shuffled tasks to get clues about logic of the product: 1-Solve a tech riddle 2-Debug a code snippet 3- Solve a case study of a failed tech startup 4- Solve a program without Inbuilt Functions. Teams solve riddles and get product related hints."
+      },
+      {
+        time: "10:30 AM - 12:00 PM",
+        event: "Round 3: The Tech Fix (PRODUCT)",
+        description: "Round 3 focuses on product development, where teams convert their solution into a basic product idea, create a visual design or workflow, and pitch it — explaining the problem, solution, and impact clearly."
+      }
     ],
-    registrationLink: "https://forms.gle/NafpoKpMwnBfLtw8A"
+    speakers: [],
+    registrationLink: "https://titaniumfest.com/events/61"
   },
   "crack-the-case": {
     title: "Crack the Case",
@@ -86,8 +75,8 @@ const EventDetail = () => {
     return <div className="text-center py-20">Event not found.</div>;
   }
 
-  // Special layout for AGENTIC AI event
-  if (id === "agentic-ai" && 'status' in event) {
+  // Special layout for Titanium event
+  if (id === "titanium-26" && 'status' in event) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20 transition-colors relative overflow-hidden">
         {/* Background Elements */}
@@ -98,7 +87,7 @@ const EventDetail = () => {
 
         <div className="max-w-7xl mx-auto py-12 px-4 relative z-10">
           {/* Back Button */}
-          <motion.button 
+          <motion.button
             className="mb-8 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium flex items-center gap-2"
             onClick={() => navigate(-1)}
             whileHover={{ x: -5 }}
@@ -108,7 +97,7 @@ const EventDetail = () => {
           </motion.button>
 
           {/* Hero Section */}
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,11 +107,11 @@ const EventDetail = () => {
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
               {event.status}
             </div>
-            
+
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               {event.title}
             </h1>
-            
+
             <div className="flex flex-wrap justify-center items-center gap-6 text-lg text-gray-600 dark:text-gray-300 mb-8">
               <div className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-blue-500" />
@@ -157,7 +146,7 @@ const EventDetail = () => {
           </motion.div>
 
           {/* Event Image */}
-          <motion.div 
+          <motion.div
             className="mb-16"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -165,16 +154,16 @@ const EventDetail = () => {
           >
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <img 
-                src={event.image} 
-                alt="AGENTIC AI Event Poster" 
+              <img
+                src={event.image}
+                alt="Titanium '26 Event Poster"
                 className="relative w-full max-w-5xl mx-auto h-64 md:h-80 lg:h-96 object-cover rounded-2xl shadow-2xl"
               />
             </div>
           </motion.div>
 
           {/* Event Description */}
-          <motion.div 
+          <motion.div
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -189,7 +178,7 @@ const EventDetail = () => {
           </motion.div>
 
           {/* Event Highlights */}
-          <motion.div 
+          <motion.div
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -221,12 +210,41 @@ const EventDetail = () => {
           </motion.div>
 
           {/* Schedule */}
-         
-           
-         
-
-          {/* Speakers */}
-          <motion.div 
+          <motion.div
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">Event Schedule</h2>
+            <div className="space-y-6">
+              {event.schedule.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border-l-4 border-blue-500"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                >
+                  <div className="flex flex-col md:flex-row md:items-start gap-4">
+                    <div className="md:w-1/4">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold">
+                        <Clock className="w-4 h-4" />
+                        {item.time}
+                      </div>
+                    </div>
+                    <div className="md:w-3/4">
+                      <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{item.event}</h3>
+                      {item.description && (
+                        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{item.description}</p>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div> {/* Speakers */}
+          <motion.div
             className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -243,8 +261,8 @@ const EventDetail = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.1 + index * 0.1 }}
                 >
-                  <img 
-                    src={speaker.image} 
+                  <img
+                    src={speaker.image}
                     alt={speaker.name}
                     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-200"
                   />
@@ -258,7 +276,7 @@ const EventDetail = () => {
           </motion.div>
 
           {/* Final CTA */}
-          <motion.div 
+          <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -290,7 +308,7 @@ const EventDetail = () => {
     <div className="min-h-screen bg-white dark:bg-black transition-colors relative overflow-hidden">
       <div className="max-w-4xl mx-auto py-12 px-4 relative z-10">
         <button className="mb-6 text-blue-600 hover:underline" onClick={() => navigate(-1)}>&larr; Back</button>
-        
+
         {/* Event Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">{event.title}</h1>
@@ -300,9 +318,9 @@ const EventDetail = () => {
 
         {/* Event Image */}
         <div className="mb-8">
-          <img 
-            src={crack} 
-            alt="Crack the Case Event - Students attending the presentation in seminar hall" 
+          <img
+            src={crack}
+            alt="Crack the Case Event - Students attending the presentation in seminar hall"
             className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-lg"
           />
         </div>
@@ -310,10 +328,10 @@ const EventDetail = () => {
         {/* Chief Guest Section */}
         {'chiefGuest' in event && (
           <div className="mb-12 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl shadow-md flex flex-col md:flex-row items-center md:items-start gap-6">
-            <img 
-              src="/woman-portrait.png" 
-              alt="Chief Guest portrait" 
-              className="w-32 h-32 md:w-40 mr-3 p-1 md:h-40 object-cover rounded-full border-4 border-blue-200 shadow-md mb-4 md:mb-0" 
+            <img
+              src="/woman-portrait.png"
+              alt="Chief Guest portrait"
+              className="w-32 h-32 md:w-40 mr-3 p-1 md:h-40 object-cover rounded-full border-4 border-blue-200 shadow-md mb-4 md:mb-0"
             />
             <div className="flex-1">
               <h2 className="text-2xl font-bold mb-2 text-blue-800 dark:text-blue-300">Chief Guest</h2>

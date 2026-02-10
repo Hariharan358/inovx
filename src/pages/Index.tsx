@@ -21,13 +21,13 @@ const sliderImages = [
 
 const events = [
   {
-    id: "agentic-ai",
-    title: "AGENTIC AI",
-    image: "/events/ai.jpg",
-    date: "15th October 2025",
-    venue: "Main Seminar Hall",
+    id: "titanium-26",
+    title: "Titanium '26 Techception",
+    image: "/events/titanium.jpg",
+    date: "12 February 2026",
+    venue: "A-NEW 103",
     shortDescription:
-      "Transforming today, shaping tomorrow, innovating for a brighter future. Join us for an exciting exploration of Agentic AI technologies and their impact on the future of innovation.",
+      "Your Hidden Treasures Await. Join us for Techception, presented by INOVX.",
   },
   {
     id: "crack-the-case",
@@ -83,7 +83,7 @@ const Index = () => {
               </span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Don't miss our exciting AGENTIC AI event - Innovation for the future
+              Don't miss our exciting Titanium '26 Techception - Your Hidden Treasures Await
             </p>
           </motion.div>
 
@@ -96,7 +96,7 @@ const Index = () => {
             <div className="relative group max-w-5xl w-full">
               {/* Glow effect */}
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
+
               {/* Poster container - Wide rectangle like presentation screen */}
               <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                 {/* Live badge */}
@@ -105,22 +105,22 @@ const Index = () => {
                     LIVE
                   </span>
                 </div>
-                
+
                 {/* Poster image - 16:9 aspect ratio */}
                 <div className="w-full aspect-video">
-                  <img 
-                    src="/events/ai.jpg" 
-                    alt="AGENTIC AI Event Poster" 
+                  <img
+                    src="/events/titanium.jpg"
+                    alt="Titanium '26 Techception Event Poster"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Overlay with event details */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-xl md:text-2xl font-bold mb-1">AGENTIC AI</h3>
-                    <p className="text-sm mb-1">October 15, 2025</p>
-                    <p className="text-xs opacity-90">Main Seminar Hall</p>
+                    <h3 className="text-xl md:text-2xl font-bold mb-1">Titanium '26 Techception</h3>
+                    <p className="text-sm mb-1">February 12, 2026</p>
+                    <p className="text-xs opacity-90">A-NEW 103</p>
                   </div>
                 </div>
               </div>
@@ -134,13 +134,13 @@ const Index = () => {
             transition={{ duration: 0.6, delay: 0.9 }}
             className="flex justify-center mt-8"
           >
-           
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 text-white font-semibold rounded-xl shadow-lg hover:from-blue-700  transition-all duration-300 hover:shadow-xl"
             >
-              <a href="https://forms.gle/NafpoKpMwnBfLtw8A"> Register Now </a>
+              <a href="/event/titanium-26"> Register Now </a>
             </motion.button>
           </motion.div>
 
@@ -160,9 +160,9 @@ const Index = () => {
                     </svg>
                   </div>
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Date</h4>
-                  <p className="text-gray-600 dark:text-gray-300">October 15, 2025</p>
+                  <p className="text-gray-600 dark:text-gray-300">February 12, 2026</p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 bg-black  rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,9 +171,9 @@ const Index = () => {
                     </svg>
                   </div>
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Venue</h4>
-                  <p className="text-gray-600 dark:text-gray-300">stay Tuned!</p>
+                  <p className="text-gray-600 dark:text-gray-300">A-NEW 103</p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,7 +195,7 @@ const Index = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="container mx-auto px-4 py-12"
       >
-        <motion.h2 
+        <motion.h2
           className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-900 dark:text-white"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -205,13 +205,13 @@ const Index = () => {
             Inauguration Event Clicks
           </span>
         </motion.h2>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
           className="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-xl shadow-md relative overflow-hidden group"
-          whileHover={{ 
+          whileHover={{
             scale: 1.02,
             boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
           }}
@@ -219,7 +219,7 @@ const Index = () => {
           {/* Decorative elements */}
           <div className="absolute top-0 left-0 w-24 h-24 bg-blue-400/10 dark:bg-blue-400/5 rounded-full -translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-700"></div>
           <div className="absolute bottom-0 right-0 w-32 h-32 bg-purple-400/10 dark:bg-purple-400/5 rounded-full translate-x-16 translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -227,32 +227,32 @@ const Index = () => {
             className="relative"
           >
             <p className="text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto">
-              Join us for the grand inauguration of our club InovX REC on <motion.span 
+              Join us for the grand inauguration of our club InovX REC on <motion.span
                 className="font-semibold text-blue-600 dark:text-blue-400 inline-block"
                 whileHover={{ scale: 1.1, y: -2 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 April 3, 2025
-              </motion.span>. We are honored to have 
-              <motion.span 
+              </motion.span>. We are honored to have
+              <motion.span
                 className="font-semibold text-blue-600 dark:text-blue-400 inline-block mx-1"
                 whileHover={{ scale: 1.1, y: -2 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 Dhana Prabu Sekar
-              </motion.span>, our esteemed alumni and successful entrepreneur, and 
-              <motion.span 
+              </motion.span>, our esteemed alumni and successful entrepreneur, and
+              <motion.span
                 className="font-semibold text-purple-600 dark:text-purple-400 inline-block mx-1"
                 whileHover={{ scale: 1.1, y: -2 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 A2D Nandhakumar
-              </motion.span>, the renowned tech influencer, as our chief guests. 
+              </motion.span>, the renowned tech influencer, as our chief guests.
               This milestone event marks the beginning of our journey to foster innovation, creativity, and technological excellence within our community.
             </p>
-            
+
             {/* Event details card */}
-            <motion.div 
+            <motion.div
               className="mt-6 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-inner border border-gray-100 dark:border-gray-700"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -271,7 +271,7 @@ const Index = () => {
                     <p className="font-medium text-gray-900 dark:text-white">April 3, 2025</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mr-3">
                     <svg className="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -287,14 +287,14 @@ const Index = () => {
             </motion.div>
           </motion.div>
         </motion.div>
-        
+
         <ImageSlider images={sliderImages} interval={4000} />
       </motion.div>
-      <AboutSection/>
-      <EventsSection/>
+      <AboutSection />
+      <EventsSection />
       <DevelopersCredit />
-      
-      <Footer/>
+
+      <Footer />
     </div>
   );
 };
